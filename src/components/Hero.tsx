@@ -43,20 +43,26 @@ export default function Hero() {
   return (
     <section className="hero" id="home" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <div ref={parallaxRef} className="hero-content">
-        <div className="hero-pill">Live AI · Real Estate Sales Automation</div>
+        <div className="hero-pill">Live AI · Inbound & Outbound Automation</div>
 
         <h1>
-          Your AI Sales Agent.<br />
-          <span>Calls. Qualifies. Closes.</span>
+          Your AI Agent That<br />
+          <span>Calls, Answers & Closes.</span>
         </h1>
 
         <p className="hero-sub">
-          The complete AI platform built for real estate professionals. It handles every call, qualifies every lead, and fills your calendar — 24 hours a day, at a fraction of the cost.
+          ZIONA AI handles every inbound call and drives outbound outreach — qualifying leads, booking appointments, and following up automatically. Works across any industry, around the clock.
         </p>
 
         <div className="hero-btns">
           <button className="btn-primary" onClick={() => scrollTo('demos')}>See AI in Action</button>
           <button className="btn-ghost" onClick={() => scrollTo('contact')}>Try for Free</button>
+        </div>
+
+        <div className="hero-tags">
+          <span className="hero-tag">Outbound AI Calling</span>
+          <span className="hero-tag">Inbound AI Receptionist</span>
+          <span className="hero-tag">AI SMS & Follow-Up</span>
         </div>
 
         <div className="hero-stats">
