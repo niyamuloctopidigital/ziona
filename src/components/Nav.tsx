@@ -6,8 +6,7 @@ export default function Nav() {
   return (
     <nav>
       <a className="nav-logo" href="#home" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>
-        <div className="nav-logo-icon">JR</div>
-        <span className="nav-logo-text">Jack Ryan AI</span>
+        <img src="https://zionaai.octopi-digital.com/wp-content/uploads/2026/02/Frame-2147226786.webp" alt="Jack Ryan AI" style={{ height: '36px', width: 'auto' }} />
       </a>
       <ul className="nav-links">
         <li><a href="#how-it-works" onClick={(e) => { e.preventDefault(); scrollTo('how-it-works'); }}>How It Works</a></li>
