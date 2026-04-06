@@ -359,15 +359,16 @@ const S: Record<string, React.CSSProperties> = {
   },
   modalSheet: {
     width: '100%', background: '#111120', borderRadius: '28px 28px 0 0',
-    borderTop: '1px solid #1E1E32', padding: '18px 20px 28px',
+    borderTop: '1px solid #1E1E32', padding: '18px 20px 24px',
+    maxHeight: '92%', overflowY: 'auto',
   },
   dragHandle: { width: 36, height: 4, background: '#2a2a40', borderRadius: 2, margin: '0 auto 14px' },
   modalTitle: { fontSize: 16, fontWeight: 600, color: '#fff', textAlign: 'center', marginBottom: 4 },
-  modalSub: { fontSize: 11, color: '#55556A', textAlign: 'center', marginBottom: 14 },
+  modalSub: { fontSize: 11, color: '#55556A', textAlign: 'center', marginBottom: 12 },
   nameInput: {
     width: '100%', background: '#1E1E32', border: '1px solid #2a2a40',
-    borderRadius: 12, color: '#fff', fontSize: 15, padding: '11px 14px',
-    outline: 'none', fontFamily: 'inherit', marginBottom: 10,
+    borderRadius: 12, color: '#fff', fontSize: 14, padding: '10px 14px',
+    outline: 'none', fontFamily: 'inherit', marginBottom: 8,
     boxSizing: 'border-box',
   },
   nameBtn: {
