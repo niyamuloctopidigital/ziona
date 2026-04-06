@@ -15,11 +15,11 @@ export default function Hero() {
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
     const tick = () => {
-      currentRef.current.x = lerp(currentRef.current.x, targetRef.current.x, 0.045);
-      currentRef.current.y = lerp(currentRef.current.y, targetRef.current.y, 0.045);
+      currentRef.current.x = lerp(currentRef.current.x, targetRef.current.x, 0.04);
+      currentRef.current.y = lerp(currentRef.current.y, targetRef.current.y, 0.04);
 
       if (parallaxRef.current) {
-        parallaxRef.current.style.transform = `translate(calc(-50% + ${currentRef.current.x}px), calc(-50% + ${currentRef.current.y}px))`;
+        parallaxRef.current.style.transform = `translate(${currentRef.current.x}px, ${currentRef.current.y}px)`;
       }
 
       rafRef.current = requestAnimationFrame(tick);
@@ -43,11 +43,11 @@ export default function Hero() {
 
   return (
     <section className="hero" id="home" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-      <div ref={parallaxRef} className="hero-cyber-wrap">
-        <CybercoreBackground beamCount={70} />
+      <div className="hero-cyber-wrap">
+        <CybercoreBackground beamCount={55} />
       </div>
 
-      <div className="hero-content">
+      <div ref={parallaxRef} className="hero-content">
         <div className="hero-pill">Live AI · Real Estate Sales Automation</div>
 
         <h1>
