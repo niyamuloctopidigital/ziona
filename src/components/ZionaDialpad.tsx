@@ -177,6 +177,7 @@ export default function ZionaDialpad() {
                 <div style={S.modalTitle}>Just a few details</div>
                 <div style={S.modalSub}>So our AI knows who it's calling</div>
                 <input
+                  className="zd-input"
                   style={S.nameInput}
                   type="text"
                   placeholder="Your full name"
@@ -185,6 +186,7 @@ export default function ZionaDialpad() {
                   autoFocus
                 />
                 <input
+                  className="zd-input"
                   style={S.nameInput}
                   type="text"
                   placeholder="Company name"
@@ -192,8 +194,9 @@ export default function ZionaDialpad() {
                   onChange={e => setCompanyVal(e.target.value)}
                 />
                 <input
+                  className="zd-input"
                   style={S.nameInput}
-                  type="email"
+                  type="text"
                   placeholder="Email address"
                   value={emailVal}
                   onChange={e => setEmailVal(e.target.value)}
@@ -295,6 +298,10 @@ export default function ZionaDialpad() {
         .zd-wavebar { animation: dialpad-wave 1.2s ease-in-out infinite; }
         .zd-dialkey:active { background: #1E1E32 !important; }
         .zd-callbtn:active { background: #16a34a !important; transform: scale(0.95); }
+        .zd-input::-webkit-contacts-auto-fill-button,
+        .zd-input::-webkit-credentials-auto-fill-button { display: none !important; visibility: hidden; }
+        .zd-input { -webkit-appearance: none; appearance: none; }
+        .zd-input::placeholder { color: #55556A; }
       `}</style>
     </div>
   );
