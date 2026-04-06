@@ -42,9 +42,9 @@ export default function ContactSection() {
           <p className="section-sub" style={{ marginBottom: '2rem' }}>
             Curious how AI fits your workflow? Want a live walkthrough? Our team will show you everything — no fluff, no pressure.
           </p>
-          <a className="contact-link" href="mailto:ryan@jackryangroup.com">
+          <a className="contact-link" href="mailto:abdc@gmail.com">
             <span className="contact-link-icon"><PulseIcon icon={Mail} size={16} /></span>
-            ryan@jackryangroup.com
+            abdc@gmail.com
           </a>
           <a className="contact-link" href="tel:">
             <span className="contact-link-icon"><PulseIcon icon={Phone} size={16} /></span>

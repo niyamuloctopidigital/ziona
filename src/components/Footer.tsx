@@ -32,7 +32,7 @@ export default function Footer() {
           </li>
         ))}
       </ul>
-      <p>© 2026 Jack Ryan AI. All rights reserved.</p>
+      <p>© 2026 ZIONA AI. All rights reserved.</p>
     </footer>
   );
 }
