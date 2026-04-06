@@ -1,3 +1,5 @@
+import { MicOff, PhoneOff, PauseCircle, Volume2, Mic, Signal } from 'lucide-react';
+
 export default function FeaturesSection() {
   return (
     <section className="features-section" id="features">
@@ -38,36 +40,73 @@ export default function FeaturesSection() {
         <div>
           <div className="call-card">
             <div className="call-card-glow" />
+
             <div className="call-top">
               <div className="c-avatar">JR</div>
               <div className="c-info">
                 <h5>Jack Ryan AI</h5>
-                <span>Calling: Sarah Mitchell</span>
+                <span>Outbound Call Active</span>
               </div>
               <div className="live-dot">Live</div>
             </div>
-            <div className="chat">
-              <p className="bubble-label">Jack Ryan AI</p>
-              <div className="bubble bubble-ai">
-                "Hi Sarah, this is Jack calling on behalf of Premier Realty. I noticed you've been exploring homes in Buckhead — do you have a couple of minutes?"
+
+            <div className="phone-ui">
+              <div className="phone-contact-block">
+                <div className="phone-contact-avatar">SM</div>
+                <div className="phone-contact-name">Sarah Mitchell</div>
+                <div className="phone-contact-meta">Buyer Lead · Atlanta, GA</div>
+                <div className="phone-duration-row">
+                  <Signal size={11} className="phone-signal-icon" />
+                  <span className="phone-duration">02:34</span>
+                  <span className="phone-status-dot" />
+                  <span className="phone-status-text">Connected</span>
+                </div>
               </div>
-              <p className="bubble-label" style={{ textAlign: 'right' }}>Prospect</p>
-              <div className="bubble bubble-client">
-                "Sure, yeah — we've been thinking about it."
+
+              <div className="phone-waveform">
+                {[3,6,9,13,8,11,15,10,7,12,9,14,6,10,8,13,5,9,11,7].map((h, i) => (
+                  <div
+                    key={i}
+                    className="wave-bar"
+                    style={{ '--bar-h': `${h}px`, animationDelay: `${i * 0.07}s` } as React.CSSProperties}
+                  />
+                ))}
               </div>
-              <div className="bubble bubble-ai">
-                "Are you hoping to move before end of year, or is this more of an early-stage exploration?"
+
+              <div className="phone-transcript-pill">
+                <span className="transcript-dot" />
+                <span>"Are you hoping to move before end of year?"</span>
               </div>
-              <div className="bubble bubble-client">
-                "We'd really like to be in by Q1."
+
+              <div className="phone-controls">
+                <button className="ctrl-btn" title="Mute">
+                  <MicOff size={18} />
+                  <span>Mute</span>
+                </button>
+                <button className="ctrl-btn ctrl-end" title="End Call">
+                  <PhoneOff size={20} />
+                </button>
+                <button className="ctrl-btn" title="Hold">
+                  <PauseCircle size={18} />
+                  <span>Hold</span>
+                </button>
               </div>
-              <div className="bubble bubble-ai">
-                "Perfect. I have Thursday at 2pm or Friday at 10am — which works best for a quick call with our team?"
+
+              <div className="phone-meta-row">
+                <div className="phone-meta-item">
+                  <Volume2 size={12} />
+                  <span>AI Speaking</span>
+                </div>
+                <div className="phone-meta-item">
+                  <Mic size={12} />
+                  <span>Lead Active</span>
+                </div>
               </div>
             </div>
+
             <div className="call-foot">
               <span>Appointment captured automatically</span>
-              <span className="booked-badge">✓ Booked</span>
+              <span className="booked-badge">&#10003; Booked</span>
             </div>
           </div>
         </div>

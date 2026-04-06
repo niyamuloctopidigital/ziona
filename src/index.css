@@ -113,11 +113,34 @@ section { position:relative; padding:6rem 5vw; }
 .c-info span { font-size:0.72rem; color:var(--text-dim); }
 .live-dot { margin-left:auto; display:flex; align-items:center; gap:0.35rem; font-size:0.72rem; color:#4ade80; font-weight:500; }
 .live-dot::before { content:''; width:6px; height:6px; border-radius:50%; background:#4ade80; animation:blink 2s infinite; }
-.chat { display:flex; flex-direction:column; gap:0.8rem; }
-.bubble { padding:0.65rem 0.9rem; border-radius:10px; font-size:0.78rem; line-height:1.55; max-width:88%; }
-.bubble-ai { background:rgba(123,79,224,0.15); border:1px solid rgba(123,79,224,0.2); color:var(--text); align-self:flex-start; }
-.bubble-client { background:var(--dark5); border:1px solid var(--border); color:var(--text-dim); align-self:flex-end; }
-.bubble-label { font-size:0.62rem; color:var(--text-muted); letter-spacing:0.05em; text-transform:uppercase; margin-bottom:0.6rem; }
+/* PHONE UI */
+.phone-ui { display:flex; flex-direction:column; gap:1.2rem; }
+.phone-contact-block { display:flex; flex-direction:column; align-items:center; gap:0.4rem; padding:0.5rem 0 0.25rem; }
+.phone-contact-avatar { width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#1a2e4a,#254b7a); border:2px solid rgba(59,130,246,0.35); display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:700; color:#93c5fd; box-shadow:0 0 24px rgba(59,130,246,0.15); }
+.phone-contact-name { font-size:1rem; font-weight:600; color:var(--text); letter-spacing:-0.01em; }
+.phone-contact-meta { font-size:0.72rem; color:var(--text-dim); }
+.phone-duration-row { display:flex; align-items:center; gap:0.45rem; margin-top:0.15rem; }
+.phone-signal-icon { color:#4ade80; }
+.phone-duration { font-size:0.78rem; font-weight:600; color:#4ade80; font-variant-numeric:tabular-nums; letter-spacing:0.04em; }
+.phone-status-dot { width:5px; height:5px; border-radius:50%; background:#4ade80; animation:blink 2s infinite; }
+.phone-status-text { font-size:0.7rem; color:var(--text-dim); }
+
+.phone-waveform { display:flex; align-items:center; justify-content:center; gap:3px; height:32px; padding:0 1rem; }
+.wave-bar { width:3px; border-radius:2px; background:linear-gradient(to top,rgba(59,130,246,0.4),rgba(147,197,253,0.85)); animation:wave-pulse 1.1s ease-in-out infinite alternate; height:var(--bar-h,6px); }
+@keyframes wave-pulse { 0%{transform:scaleY(0.4);opacity:0.5} 100%{transform:scaleY(1.4);opacity:1} }
+
+.phone-transcript-pill { display:flex; align-items:center; gap:0.5rem; background:rgba(59,130,246,0.07); border:1px solid rgba(59,130,246,0.18); border-radius:50px; padding:0.5rem 0.9rem; font-size:0.73rem; color:var(--text-dim); font-style:italic; }
+.transcript-dot { width:6px; height:6px; border-radius:50%; background:#3b82f6; flex-shrink:0; animation:blink 1.5s infinite; }
+
+.phone-controls { display:flex; align-items:center; justify-content:center; gap:1.5rem; padding:0.25rem 0; }
+.ctrl-btn { display:flex; flex-direction:column; align-items:center; gap:0.3rem; background:var(--dark5); border:1px solid var(--border); border-radius:12px; padding:0.65rem 1rem; color:var(--text-dim); font-size:0.65rem; cursor:pointer; transition:all 0.2s; min-width:56px; }
+.ctrl-btn:hover { background:var(--dark4); border-color:rgba(255,255,255,0.15); color:var(--text); transform:translateY(-1px); }
+.ctrl-end { background:rgba(239,68,68,0.12); border-color:rgba(239,68,68,0.3); color:#f87171; border-radius:50%; width:52px; height:52px; padding:0; min-width:unset; }
+.ctrl-end:hover { background:rgba(239,68,68,0.22); border-color:rgba(239,68,68,0.5); color:#fca5a5; }
+
+.phone-meta-row { display:flex; justify-content:center; gap:1.5rem; }
+.phone-meta-item { display:flex; align-items:center; gap:0.35rem; font-size:0.68rem; color:var(--text-muted); }
+.phone-meta-item svg { opacity:0.7; }
 .call-foot { margin-top:1.25rem; padding-top:1.1rem; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
 .call-foot span { font-size:0.72rem; color:var(--text-muted); }
 .booked-badge { background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); color:#4ade80; font-size:0.68rem; font-weight:600; padding:0.28rem 0.7rem; border-radius:50px; letter-spacing:0.05em; }

@@ -1,11 +1,11 @@
 import { Phone } from 'lucide-react';
 
 const demos = [
-  { type: 'Real Estate', name: 'Seller Lead Script', number: '(470) 470-4504' },
-  { type: 'Real Estate', name: 'Buyer Lead Script', number: '(470) 790-3257' },
-  { type: 'Mortgage', name: 'Lender Script', number: '(470) 450-1893' },
-  { type: 'Farming', name: 'Neighborhood Campaign', number: '(470) 649-3443' },
-  { type: 'Event', name: 'Open House Follow-Up', number: '(470) 450-2622' },
+  { type: 'Real Estate', name: 'Seller Lead Script', number: '+1 111 222 3334' },
+  { type: 'Real Estate', name: 'Buyer Lead Script', number: '+1 111 222 3334' },
+  { type: 'Mortgage', name: 'Lender Script', number: '+1 111 222 3334' },
+  { type: 'Farming', name: 'Neighborhood Campaign', number: '+1 111 222 3334' },
+  { type: 'Event', name: 'Open House Follow-Up', number: '+1 111 222 3334' },
 ];
 
 export default function DemosSection() {
@@ -24,7 +24,7 @@ export default function DemosSection() {
           <a
             key={i}
             className="demo-card"
-            href={`tel:${demo.number.replace(/\D/g, '')}`}
+            href={`tel:+11112223334`}
           >
             <span className="demo-type">{demo.type}</span>
             <span className="demo-name">{demo.name}</span>
