@@ -1,33 +1,52 @@
-import { useState } from 'react';
+import { useRef, useEffect } from 'react';
 
 export default function Hero() {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const targetRef = useRef({ x: 0, y: 0 });
+  const currentRef = useRef({ x: 0, y: 0 });
+  const rafRef = useRef<number>(0);
+  const svgRef = useRef<SVGSVGElement>(null);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+    const tick = () => {
+      currentRef.current.x = lerp(currentRef.current.x, targetRef.current.x, 0.045);
+      currentRef.current.y = lerp(currentRef.current.y, targetRef.current.y, 0.045);
+
+      if (svgRef.current) {
+        svgRef.current.style.transform = `translate(calc(-50% + ${currentRef.current.x}px), calc(-50% + ${currentRef.current.y}px))`;
+      }
+
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 40;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 20;
-    setOffset({ x, y });
+    targetRef.current = {
+      x: ((e.clientX - rect.left) / rect.width - 0.5) * 40,
+      y: ((e.clientY - rect.top) / rect.height - 0.5) * 20,
+    };
   };
 
   const handleMouseLeave = () => {
-    setOffset({ x: 0, y: 0 });
+    targetRef.current = { x: 0, y: 0 };
   };
 
   return (
     <section className="hero" id="home" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <svg
+        ref={svgRef}
         className="hero-wave"
         viewBox="0 0 1000 200"
         fill="none"
-        style={{
-          transform: `translate(calc(-50% + ${offset.x}px), calc(-50% + ${offset.y}px))`,
-          transition: 'transform 0.25s ease-out',
-        }}
       >
         <path
           d="M-100 100 Q5 20 110 100 Q215 180 330 100 Q435 20 550 100 Q655 180 770 100 Q875 20 990 100 Q1050 180 1100 100"
@@ -35,7 +54,7 @@ export default function Hero() {
           strokeWidth="3.5"
           fill="none"
           strokeDasharray="1800"
-          style={{ animation: 'waveFlow 3s linear infinite' }}
+          style={{ animation: 'waveFlow 9s linear infinite' }}
         />
         <path
           d="M-100 100 Q30 55 110 100 Q190 145 275 100 Q360 55 440 100 Q520 145 605 100 Q690 55 770 100 Q855 145 935 100 Q1020 55 1100 100"
@@ -44,7 +63,7 @@ export default function Hero() {
           fill="none"
           opacity="0.8"
           strokeDasharray="1800"
-          style={{ animation: 'waveFlow 5s linear infinite' }}
+          style={{ animation: 'waveFlow 14s linear infinite' }}
         />
         <path
           d="M-100 95 Q70 15 195 95 Q320 175 440 95 Q560 15 680 95 Q800 175 920 95 Q1040 15 1100 95"
@@ -53,7 +72,7 @@ export default function Hero() {
           fill="none"
           opacity="0.45"
           strokeDasharray="1800"
-          style={{ animation: 'waveFlow 8s linear infinite reverse' }}
+          style={{ animation: 'waveFlow 20s linear infinite reverse' }}
         />
       </svg>
 

@@ -72,8 +72,7 @@ section { position:relative; padding:6rem 5vw; }
   background:radial-gradient(ellipse 80% 55% at 50% 55%, rgba(123,79,224,0.18) 0%, transparent 70%), #07070D;
 }
 .hero-content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; width:100%; }
-.hero-wave { position:absolute; top:50%; left:50%; width:140%; height:320px; opacity:0.38; pointer-events:none; transform:translate(-50%,-50%); animation:waveFloat 6s ease-in-out infinite; transition:transform 0.25s ease-out; z-index:1; }
-@keyframes waveFloat { 0%,100%{ top:50%; } 50%{ top:calc(50% - 14px); } }
+.hero-wave { position:absolute; top:50%; left:50%; width:140%; height:320px; opacity:0.38; pointer-events:none; transform:translate(-50%,-50%); z-index:1; will-change:transform; }
 @keyframes waveFlow { from{ stroke-dashoffset:0; } to{ stroke-dashoffset:-1800; } }
 .hero-pill { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(123,79,224,0.15); border:1px solid var(--purple-border); color:var(--purple-light); font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:0.4rem 1.1rem; border-radius:50px; margin-bottom:2rem; }
 .hero-pill::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--purple-bright); animation:blink 2s infinite; }
