@@ -27,11 +27,15 @@ const DIAL_KEYS: { digit: string; sub: string }[] = [
 
 const WAVE_HEIGHTS = [3, 6, 9, 13, 8, 11, 15, 10, 7, 12, 9, 14, 6, 10, 8, 13, 5, 9];
 
+const DIALPAD_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/O7FdFwAXD339u8MjAKQH/webhook-trigger/d05360a2-edba-4f7d-a016-5baea537b69e';
+
 export default function ZionaDialpad() {
   const [num, setNum] = useState('');
   const [numFlash, setNumFlash] = useState(false);
   const [state, setState] = useState<'dial' | 'name' | 'calling'>('dial');
   const [nameVal, setNameVal] = useState('');
+  const [emailVal, setEmailVal] = useState('');
+  const [companyVal, setCompanyVal] = useState('');
   const [callerName, setCallerName] = useState('');
   const [secs, setSecs] = useState(0);
   const [phraseIdx, setPhraseIdx] = useState(0);
@@ -89,28 +93,29 @@ export default function ZionaDialpad() {
 
   const submitName = useCallback(async () => {
     const name = nameVal.trim();
+    const email = emailVal.trim();
+    const company = companyVal.trim();
     const phone = num.replace(/\D/g, '');
     setCallerName(name);
     setState('calling');
     setSecs(0);
     setPhraseIdx(0);
     try {
-      const url = import.meta.env.VITE_WEBHOOK_URL;
-      if (url) {
-        await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, phone }),
-        });
-      }
+      await fetch(DIALPAD_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, company, phone }),
+      });
     } catch { }
-  }, [nameVal, num]);
+  }, [nameVal, emailVal, companyVal, num]);
 
   const endCall = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     setState('dial');
     setNum('');
     setNameVal('');
+    setEmailVal('');
+    setCompanyVal('');
     setCallerName('');
     setSecs(0);
     setPhraseIdx(0);
@@ -169,7 +174,7 @@ export default function ZionaDialpad() {
             <div style={S.modalOverlay}>
               <div style={S.modalSheet}>
                 <div style={S.dragHandle} />
-                <div style={S.modalTitle}>What's your name?</div>
+                <div style={S.modalTitle}>Just a few details</div>
                 <div style={S.modalSub}>So our AI knows who it's calling</div>
                 <input
                   style={S.nameInput}
@@ -179,9 +184,23 @@ export default function ZionaDialpad() {
                   onChange={e => setNameVal(e.target.value)}
                   autoFocus
                 />
+                <input
+                  style={S.nameInput}
+                  type="text"
+                  placeholder="Company name"
+                  value={companyVal}
+                  onChange={e => setCompanyVal(e.target.value)}
+                />
+                <input
+                  style={S.nameInput}
+                  type="email"
+                  placeholder="Email address"
+                  value={emailVal}
+                  onChange={e => setEmailVal(e.target.value)}
+                />
                 <button
-                  style={{ ...S.nameBtn, ...(nameVal.trim().length < 2 ? S.nameBtnDisabled : {}) }}
-                  disabled={nameVal.trim().length < 2}
+                  style={{ ...S.nameBtn, ...(nameVal.trim().length < 2 || !emailVal.includes('@') ? S.nameBtnDisabled : {}) }}
+                  disabled={nameVal.trim().length < 2 || !emailVal.includes('@')}
                   onClick={submitName}
                 >
                   Get My Call
