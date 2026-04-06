@@ -43,7 +43,7 @@ export default function Hero() {
   return (
     <section className="hero" id="home" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <div ref={parallaxRef} className="hero-content">
-        <div className="hero-pill">Live AI · Inbound & Outbound Automation</div>
+        <div className="hero-pill">Inbound & Outbound Calling Agent</div>
 
         <h1>
           Your AI Agent That<br />
