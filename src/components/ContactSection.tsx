@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Mail, Phone } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import PulseIcon from './PulseIcon';
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
@@ -41,11 +43,11 @@ export default function ContactSection() {
             Curious how AI fits your workflow? Want a live walkthrough? Our team will show you everything — no fluff, no pressure.
           </p>
           <a className="contact-link" href="mailto:ryan@jackryangroup.com">
-            <span className="contact-link-icon">✉</span>
+            <span className="contact-link-icon"><PulseIcon icon={Mail} size={16} /></span>
             ryan@jackryangroup.com
           </a>
           <a className="contact-link" href="tel:">
-            <span className="contact-link-icon">📞</span>
+            <span className="contact-link-icon"><PulseIcon icon={Phone} size={16} /></span>
           </a>
         </div>
 

@@ -1,4 +1,5 @@
-import { MicOff, PhoneOff, PauseCircle, Volume2, Mic, Signal } from 'lucide-react';
+import { MicOff, PhoneOff, PauseCircle, Volume2, Mic, Signal, CalendarCheck, Zap, BarChart2 } from 'lucide-react';
+import PulseIcon from './PulseIcon';
 
 export default function FeaturesSection() {
   return (
@@ -14,21 +15,21 @@ export default function FeaturesSection() {
           </p>
           <div className="feat-list">
             <div className="feat-item">
-              <div className="feat-icon">📅</div>
+              <div className="feat-icon"><PulseIcon icon={CalendarCheck} size={18} /></div>
               <div>
                 <h4>Hands-Free Appointment Setting</h4>
                 <p>The AI calls prospects and locks listing appointments directly into your calendar — and theirs — with zero double-bookings.</p>
               </div>
             </div>
             <div className="feat-item">
-              <div className="feat-icon">⚡</div>
+              <div className="feat-icon"><PulseIcon icon={Zap} size={18} /></div>
               <div>
                 <h4>Instant Lead Response</h4>
                 <p>Every new lead receives a reply within seconds. Stop losing deals to the first agent who picked up the phone.</p>
               </div>
             </div>
             <div className="feat-item">
-              <div className="feat-icon">📊</div>
+              <div className="feat-icon"><PulseIcon icon={BarChart2} size={18} /></div>
               <div>
                 <h4>Real-Time Lead Intelligence</h4>
                 <p>Get instant insight into lead quality, engagement levels, and buying readiness — before you ever dial.</p>
