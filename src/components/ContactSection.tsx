@@ -3,8 +3,18 @@ import { Mail, Phone } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import PulseIcon from './PulseIcon';
 
+const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/O7FdFwAXD339u8MjAKQH/webhook-trigger/d05360a2-edba-4f7d-a016-5baea537b69e';
+
+interface FormState {
+  name: string;
+  company: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
 export default function ContactSection() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [form, setForm] = useState<FormState>({ name: '', company: '', email: '', phone: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -16,18 +26,34 @@ export default function ContactSection() {
     if (!form.name || !form.email) return;
     setStatus('loading');
 
-    const { error } = await supabase.from('contact_submissions').insert({
-      name: form.name,
-      email: form.email,
-      phone: form.phone,
-      message: form.message,
-    });
+    const [dbResult] = await Promise.allSettled([
+      supabase.from('contact_submissions').insert({
+        name: form.name,
+        company: form.company,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      }),
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+        }),
+      }),
+    ]);
 
-    if (error) {
+    const dbError = dbResult.status === 'fulfilled' ? dbResult.value.error : dbResult.reason;
+
+    if (dbError) {
       setStatus('error');
     } else {
       setStatus('success');
-      setForm({ name: '', email: '', phone: '', message: '' });
+      setForm({ name: '', company: '', email: '', phone: '', message: '' });
     }
   };
 
@@ -57,10 +83,20 @@ export default function ContactSection() {
             <input
               type="text"
               name="name"
-              placeholder="Sarah Mitchell"
+              placeholder="Your full name"
               value={form.name}
               onChange={handleChange}
               required
+            />
+          </div>
+          <div className="fgroup">
+            <label>Company Name</label>
+            <input
+              type="text"
+              name="company"
+              placeholder="Your company or brokerage"
+              value={form.company}
+              onChange={handleChange}
             />
           </div>
           <div className="fgroup">
