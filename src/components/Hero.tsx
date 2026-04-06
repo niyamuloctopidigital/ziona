@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react';
-import CybercoreBackground from './CybercoreBackground';
 
 export default function Hero() {
   const targetRef = useRef({ x: 0, y: 0 });
@@ -32,8 +31,8 @@ export default function Hero() {
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     targetRef.current = {
-      x: ((e.clientX - rect.left) / rect.width - 0.5) * 30,
-      y: ((e.clientY - rect.top) / rect.height - 0.5) * 15,
+      x: ((e.clientX - rect.left) / rect.width - 0.5) * 20,
+      y: ((e.clientY - rect.top) / rect.height - 0.5) * 10,
     };
   };
 
@@ -43,10 +42,6 @@ export default function Hero() {
 
   return (
     <section className="hero" id="home" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-      <div className="hero-cyber-wrap">
-        <CybercoreBackground beamCount={55} />
-      </div>
-
       <div ref={parallaxRef} className="hero-content">
         <div className="hero-pill">Live AI · Real Estate Sales Automation</div>
 

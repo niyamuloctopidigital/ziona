@@ -69,104 +69,33 @@ section { position:relative; padding:6rem 5vw; }
 .hero {
   min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center; padding:9rem 5vw 6rem; overflow:hidden; position:relative;
-  background:radial-gradient(ellipse 80% 55% at 50% 55%, rgba(123,79,224,0.18) 0%, transparent 70%), #07070D;
+  background: linear-gradient(135deg, #07070D 0%, #0f0a1e 25%, #0d0d1f 50%, #060612 75%, #07070D 100%);
+  background-size: 400% 400%;
+  animation: heroShift 12s ease infinite;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(123,79,224,0.13) 0%, transparent 65%);
+  animation: heroShift 18s ease infinite reverse;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 20% 80%, rgba(80,50,180,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 35% at 80% 20%, rgba(100,60,200,0.07) 0%, transparent 55%);
+  animation: heroShift 22s ease infinite;
+  pointer-events: none;
 }
 .hero-content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; width:100%; }
-/* HERO CYBER BACKGROUND */
-.hero-cyber-wrap {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.cyber-scene {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.cyber-floor {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200%;
-  height: 50%;
-  background:
-    linear-gradient(to top, rgba(0,229,255,0.03) 0%, transparent 70%),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 79px,
-      rgba(0,229,255,0.055) 80px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 59px,
-      rgba(0,229,255,0.04) 60px
-    );
-  animation: moveGrid 12s linear infinite;
-}
-
-.cyber-column {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,229,255,0.4) 0%, rgba(0,229,255,0.08) 55%, transparent 100%);
-  filter: blur(0.5px);
-  animation: mainGlow 4s ease-in-out infinite alternate;
-}
-
-.cyber-beams {
-  position: absolute;
-  inset: 0;
-}
-
-.cyber-beam {
-  position: absolute;
-  bottom: 0;
-  height: 100%;
-  border-radius: 1px;
-  animation: cyberRise var(--rise, 7s) cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite,
-             cyberFade var(--fade, 7s) ease-in-out infinite;
-}
-
-.cyber-beam--primary {
-  background: linear-gradient(to top, rgba(0,229,255,0.0) 0%, rgba(0,229,255,0.6) 35%, rgba(0,229,255,0.15) 65%, rgba(0,229,255,0.0) 100%);
-  box-shadow: 0 0 4px 0.5px rgba(0,229,255,0.25);
-}
-
-.cyber-beam--secondary {
-  background: linear-gradient(to top, rgba(255,184,108,0.0) 0%, rgba(255,184,108,0.65) 35%, rgba(255,184,108,0.12) 65%, rgba(255,184,108,0.0) 100%);
-  box-shadow: 0 0 5px 1px rgba(255,184,108,0.28);
-}
-
-@keyframes cyberRise {
-  0%   { transform: translateY(0%); }
-  100% { transform: translateY(-200%); }
-}
-
-@keyframes cyberFade {
-  0%       { opacity: 0; }
-  5%       { opacity: 0; }
-  15%, 70% { opacity: 1; }
-  100%     { opacity: 0; }
-}
-
-@keyframes moveGrid {
-  from { background-position: 0 0; }
-  to   { background-position: -80px -60px; }
-}
-
-@keyframes mainGlow {
-  from { opacity: 0.3; filter: blur(1.5px); }
-  to   { opacity: 0.6; filter: blur(0.25px); }
+/* HERO ANIMATED GRADIENT */
+@keyframes heroShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .hero-pill { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(123,79,224,0.15); border:1px solid var(--purple-border); color:var(--purple-light); font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:0.4rem 1.1rem; border-radius:50px; margin-bottom:2rem; }
 .hero-pill::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--purple-bright); animation:blink 2s infinite; }
