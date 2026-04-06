@@ -1,5 +1,6 @@
 import Nav from './components/Nav';
 import Hero from './components/Hero';
+import IndustriesSection from './components/IndustriesSection';
 import DemosSection from './components/DemosSection';
 import FeaturesSection from './components/FeaturesSection';
 import HowItWorks from './components/HowItWorks';
@@ -18,6 +19,7 @@ function App() {
     <>
       <Nav />
       <Hero />
+      <IndustriesSection />
       <DemosSection />
       <FeaturesSection />
       <HowItWorks />
