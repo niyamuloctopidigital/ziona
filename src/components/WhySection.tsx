@@ -1,31 +1,31 @@
-import { Moon, Database, ShieldCheck, TrendingUp, MessageCircle, type LucideIcon } from 'lucide-react';
+import { PhoneCall, Briefcase, ShieldCheck, TrendingUp, MessageCircle, type LucideIcon } from 'lucide-react';
 import PulseIcon from './PulseIcon';
 
 const reasons: { icon: LucideIcon; title: string; desc: string }[] = [
   {
-    icon: Moon,
-    title: 'Always On, Never Resting',
-    desc: 'ZIONA AI operates around the clock — capturing every lead, even at midnight on a Sunday.',
+    icon: PhoneCall,
+    title: 'Always On — Inbound & Outbound',
+    desc: 'ZIONA AI answers every call coming in and makes every call going out — 24/7, with no breaks, no sick days, and no missed leads.',
   },
   {
-    icon: Database,
-    title: 'A Self-Cleaning Number List',
-    desc: 'The more calls the AI makes, the more accurate your database becomes — never waste time on bad numbers again.',
+    icon: Briefcase,
+    title: 'Works in Any Industry',
+    desc: 'From medical clinics to law firms, from real estate teams to home service companies — ZIONA AI adapts to your scripts, your tone, and your workflow.',
   },
   {
     icon: ShieldCheck,
     title: 'Zero Leads Left Behind',
-    desc: 'Every enquiry is acknowledged instantly. No voicemail, no delay, no lost commissions.',
+    desc: 'Every inbound enquiry is answered instantly. Every outbound lead is followed up relentlessly. No voicemail. No dropped opportunities.',
   },
   {
     icon: TrendingUp,
-    title: 'Scale Without Overhead',
-    desc: 'The output of a full inside-sales team at a fraction of the cost — no salaries, benefits, or management needed.',
+    title: 'Scale Without the Overhead',
+    desc: 'Replace the cost of multiple receptionists and sales reps with a single AI platform that does it all — for a fraction of the price.',
   },
   {
     icon: MessageCircle,
-    title: 'Conversations That Feel Personal',
-    desc: "AI follow-ups are tailored to each lead's situation, keeping them engaged without feeling like a mass campaign.",
+    title: 'Tailored Conversations, Every Time',
+    desc: "ZIONA AI speaks your brand's language — personalised scripts, industry-specific knowledge, and natural dialogue that feels human to every caller.",
   },
 ];
 
@@ -35,10 +35,10 @@ export default function WhySection() {
       <div className="text-center">
         <span className="section-tag">The Advantages</span>
         <h2 className="section-title">
-          Why Top Agents <em>Choose AI Calling</em>
+          Why Businesses Across Every Industry <em>Choose ZIONA</em>
         </h2>
         <p className="section-sub" style={{ margin: '0 auto' }}>
-          Immediate ROI. Zero management overhead. Results from day one.
+          Whether you're in real estate, healthcare, legal, or home services — the results are the same: more conversations, more bookings, less cost.
         </p>
       </div>
 
