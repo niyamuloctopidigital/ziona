@@ -44,7 +44,7 @@ export default function FeaturesSection() {
             <div className="call-top">
               <div className="c-avatar">JR</div>
               <div className="c-info">
-                <h5>Jack Ryan AI</h5>
+                <h5>Ziona</h5>
                 <span>Outbound Call Active</span>
               </div>
               <div className="live-dot">Live</div>
