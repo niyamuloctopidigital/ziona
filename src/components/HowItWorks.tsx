@@ -5,26 +5,26 @@ const steps: { n: string; icon: LucideIcon; title: string; desc: string }[] = [
   {
     n: '01',
     icon: PhoneOutgoing,
-    title: 'High-Volume AI Outreach',
-    desc: 'ZIONA AI reaches over 1,000 contacts and holds genuine conversations with 100+ homeowners — all within a single hour.',
+    title: 'Outbound or Inbound Trigger',
+    desc: 'ZIONA AI either proactively calls your lead list at scale, or instantly picks up every incoming call to your business — 24 hours a day.',
   },
   {
     n: '02',
     icon: Filter,
-    title: 'Smart Lead Filtering',
-    desc: "The AI evaluates each prospect's motivation, budget, and timeline — ensuring only serious buyers and sellers advance.",
+    title: 'Smart Qualification',
+    desc: "The AI holds a natural two-way conversation, identifying each prospect's needs, budget, and timeline — so only high-intent leads advance.",
   },
   {
     n: '03',
     icon: RefreshCw,
-    title: 'Automated Nurturing',
-    desc: "For leads not quite ready, the AI maintains contact with timely, personalised follow-ups until they're ready to act.",
+    title: 'Automated Follow-Up',
+    desc: 'Leads not yet ready are nurtured automatically with timely calls and personalised SMS until they\'re prepared to take the next step.',
   },
   {
     n: '04',
     icon: CalendarCheck,
-    title: 'Seamless Scheduling',
-    desc: 'Qualified leads get booked straight into your calendar. You show up to the conversation — the AI handles everything before it.',
+    title: 'Instant Scheduling',
+    desc: 'Qualified leads are booked straight into your calendar with instant SMS confirmation. You show up — the AI handles everything before it.',
   },
 ];
 
@@ -38,10 +38,10 @@ export default function HowItWorks() {
       <div className="text-center">
         <span className="section-tag">The Process</span>
         <h2 className="section-title">
-          Cold Lead to <em>Booked Appointment</em>
+          From First Contact to <em>Booked Appointment</em>
         </h2>
         <p className="section-sub" style={{ margin: '0 auto' }}>
-          Four fully automated steps working around the clock — even while you sleep or focus on closing.
+          Whether a lead calls you or you call them — ZIONA AI handles every step automatically.
         </p>
       </div>
 
