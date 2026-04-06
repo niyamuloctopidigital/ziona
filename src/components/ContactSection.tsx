@@ -44,9 +44,8 @@ export default function ContactSection() {
             <span className="contact-link-icon">✉</span>
             ryan@jackryangroup.com
           </a>
-          <a className="contact-link" href="tel:4704377242">
+          <a className="contact-link" href="tel:">
             <span className="contact-link-icon">📞</span>
-            (470) 437-7242
           </a>
         </div>
 
