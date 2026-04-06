@@ -3,7 +3,7 @@ const plans = [
     name: 'Free Plan',
     price: '$0',
     period: '/ 10-day trial',
-    tagline: 'Experience the full power of Jack Ryan AI before committing a single dollar.',
+    tagline: 'Experience the full power of ZIONA AI before committing a single dollar.',
     features: [
       '1 AI Outbound Calling Agent',
       '1 AI Receptionist (Inbound)',
@@ -90,7 +90,7 @@ export default function PricingSection({ onGetStarted }: PricingSectionProps) {
 
       <p className="pricing-footnote">
         One-time setup fee applies to paid plans &nbsp;·&nbsp; Cancel anytime with 30 days notice<br />
-        Compare: a full-time ISA costs $40K–$70K/year &nbsp;·&nbsp; Jack Ryan AI Scale: $18,000/year
+        Compare: a full-time ISA costs $40K–$70K/year &nbsp;·&nbsp; ZIONA AI Scale: $18,000/year
       </p>
     </section>
   );

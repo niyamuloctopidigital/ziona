@@ -15,7 +15,7 @@ export default function DemosSection() {
         <span className="section-tag">Live Demo Lines</span>
         <h2 className="section-title">Hear It for <em>Yourself</em></h2>
         <p className="section-sub">
-          Dial any number below from your phone. Ask it anything. Experience exactly how Jack Ryan AI qualifies a real lead — in real time.
+          Dial any number below from your phone. Ask it anything. Experience exactly how ZIONA AI qualifies a real lead — in real time.
         </p>
       </div>
 

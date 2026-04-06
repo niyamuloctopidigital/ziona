@@ -18,7 +18,7 @@ export default function Footer() {
         href="#home"
         onClick={(e) => { e.preventDefault(); scrollTo('home'); }}
       >
-        <img src="https://zionaai.octopi-digital.com/wp-content/uploads/2026/02/Frame-2147226786.webp" alt="Jack Ryan AI" style={{ height: '30px', width: 'auto' }} />
+        <img src="https://zionaai.octopi-digital.com/wp-content/uploads/2026/02/Frame-2147226786.webp" alt="ZIONA AI" style={{ height: '30px', width: 'auto' }} />
       </a>
       <ul className="footer-links">
         {links.map((l) => (

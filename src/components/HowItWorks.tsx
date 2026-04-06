@@ -6,7 +6,7 @@ const steps: { n: string; icon: LucideIcon; title: string; desc: string }[] = [
     n: '01',
     icon: PhoneOutgoing,
     title: 'High-Volume AI Outreach',
-    desc: 'Jack Ryan AI reaches over 1,000 contacts and holds genuine conversations with 100+ homeowners — all within a single hour.',
+    desc: 'ZIONA AI reaches over 1,000 contacts and holds genuine conversations with 100+ homeowners — all within a single hour.',
   },
   {
     n: '02',

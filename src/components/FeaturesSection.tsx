@@ -12,7 +12,7 @@ export default function FeaturesSection() {
             Stop Chasing.<br /><em>Start Closing.</em>
           </h2>
           <p className="section-sub">
-            Jack Ryan AI handles the outreach grind so you can focus exclusively on what only you can do — building relationships and sealing deals.
+            ZIONA AI handles the outreach grind so you can focus exclusively on what only you can do — building relationships and sealing deals.
           </p>
           <div className="feat-list">
             <div className="feat-item">

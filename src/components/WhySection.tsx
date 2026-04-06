@@ -5,7 +5,7 @@ const reasons: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: Moon,
     title: 'Always On, Never Resting',
-    desc: 'Jack Ryan AI operates around the clock — capturing every lead, even at midnight on a Sunday.',
+    desc: 'ZIONA AI operates around the clock — capturing every lead, even at midnight on a Sunday.',
   },
   {
     icon: Database,
