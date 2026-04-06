@@ -1,25 +1,28 @@
-const steps = [
+import { PhoneOutgoing, Filter, RefreshCw, CalendarCheck, type LucideIcon } from 'lucide-react';
+import PulseIcon from './PulseIcon';
+
+const steps: { n: string; icon: LucideIcon; title: string; desc: string }[] = [
   {
     n: '01',
-    icon: '📞',
+    icon: PhoneOutgoing,
     title: 'High-Volume AI Outreach',
     desc: 'Jack Ryan AI reaches over 1,000 contacts and holds genuine conversations with 100+ homeowners — all within a single hour.',
   },
   {
     n: '02',
-    icon: '🔍',
+    icon: Filter,
     title: 'Smart Lead Filtering',
     desc: "The AI evaluates each prospect's motivation, budget, and timeline — ensuring only serious buyers and sellers advance.",
   },
   {
     n: '03',
-    icon: '🔁',
+    icon: RefreshCw,
     title: 'Automated Nurturing',
-    desc: 'For leads not quite ready, the AI maintains contact with timely, personalised follow-ups until they\'re ready to act.',
+    desc: "For leads not quite ready, the AI maintains contact with timely, personalised follow-ups until they're ready to act.",
   },
   {
     n: '04',
-    icon: '🗓️',
+    icon: CalendarCheck,
     title: 'Seamless Scheduling',
     desc: 'Qualified leads get booked straight into your calendar. You show up to the conversation — the AI handles everything before it.',
   },
@@ -45,7 +48,9 @@ export default function HowItWorks() {
       <div className="steps-grid">
         {steps.map((step) => (
           <div key={step.n} className="step-card" data-n={step.n}>
-            <div className="step-ico">{step.icon}</div>
+            <div className="step-ico">
+              <PulseIcon icon={step.icon} />
+            </div>
             <h3>{step.title}</h3>
             <p>{step.desc}</p>
           </div>
