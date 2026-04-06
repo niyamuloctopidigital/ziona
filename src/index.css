@@ -135,7 +135,7 @@ section { position:relative; padding:6rem 5vw; }
 .phone-controls { display:flex; align-items:center; justify-content:center; gap:1.5rem; padding:0.25rem 0; }
 .ctrl-btn { display:flex; flex-direction:column; align-items:center; gap:0.3rem; background:var(--dark5); border:1px solid var(--border); border-radius:12px; padding:0.65rem 1rem; color:var(--text-dim); font-size:0.65rem; cursor:pointer; transition:all 0.2s; min-width:56px; }
 .ctrl-btn:hover { background:var(--dark4); border-color:rgba(255,255,255,0.15); color:var(--text); transform:translateY(-1px); }
-.ctrl-end { background:rgba(239,68,68,0.12); border-color:rgba(239,68,68,0.3); color:#f87171; border-radius:50%; width:52px; height:52px; padding:0; min-width:unset; }
+.ctrl-end { background:rgba(239,68,68,0.12); border-color:rgba(239,68,68,0.3); color:#f87171; border-radius:50%; width:52px; height:52px; padding:0; min-width:unset; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .ctrl-end:hover { background:rgba(239,68,68,0.22); border-color:rgba(239,68,68,0.5); color:#fca5a5; }
 
 .phone-meta-row { display:flex; justify-content:center; gap:1.5rem; }
