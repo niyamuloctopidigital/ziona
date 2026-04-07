@@ -1,42 +1,48 @@
-import { Phone, MessageSquare } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
-type DemoMode = 'outbound' | 'inbound' | 'sms';
+type DemoMode = 'outbound' | 'inbound';
 
-const demos: { mode: DemoMode; name: string; desc: string; number: string }[] = [
+const demos: { mode: DemoMode; industry: string; name: string; desc: string; number: string }[] = [
+  {
+    mode: 'inbound',
+    industry: 'Healthcare',
+    name: 'Clinic Appointment Booking',
+    desc: 'Call in as a patient. ZIONA AI collects your details, checks availability, and books your consultation — instantly.',
+    number: '+1 111 222 3334',
+  },
   {
     mode: 'outbound',
-    name: 'Cold Lead Qualification',
-    desc: 'Hear how ZIONA AI opens a cold call, qualifies intent, and moves a prospect toward booking.',
+    industry: 'Legal Services',
+    name: 'Legal Consultation Outreach',
+    desc: 'Hear how ZIONA AI reaches out to a warm enquiry, qualifies their legal need, and books a solicitor call.',
     number: '+1 111 222 3334',
   },
   {
     mode: 'inbound',
-    name: 'Appointment Booking',
-    desc: 'Call in as a customer. ZIONA AI answers, understands your request, and schedules a slot instantly.',
+    industry: 'Home Services',
+    name: 'Service Quote & Scheduling',
+    desc: 'Call in requesting a quote. ZIONA AI gathers your job details, provides a rough estimate, and locks in a visit.',
     number: '+1 111 222 3334',
   },
   {
     mode: 'outbound',
-    name: 'Follow-Up & Nurturing',
-    desc: 'See how ZIONA AI re-engages a warm lead, handles objections, and keeps the conversation moving.',
+    industry: 'Automotive',
+    name: 'Test Drive Booking Outreach',
+    desc: 'Hear ZIONA AI follow up with a showroom enquiry, handle questions about a vehicle, and book a test drive.',
     number: '+1 111 222 3334',
   },
   {
     mode: 'inbound',
-    name: 'Customer Support & FAQs',
-    desc: 'Ask any common question. ZIONA AI handles it naturally — no hold music, no transfers, no wait.',
+    industry: 'Fitness & Gyms',
+    name: 'Membership Enquiry & Sign-Up',
+    desc: 'Call in asking about gym plans. ZIONA AI walks you through options, answers questions, and signs you up for a trial.',
     number: '+1 111 222 3334',
   },
   {
     mode: 'outbound',
-    name: 'Dormant Lead Reactivation',
-    desc: 'Listen to how ZIONA AI wins back a lapsed contact with a natural, non-pushy conversation.',
-    number: '+1 111 222 3334',
-  },
-  {
-    mode: 'sms',
-    name: 'Automated Text Follow-Up',
-    desc: 'Text the number and see how ZIONA AI continues the conversation over SMS — qualifying and booking via text.',
+    industry: 'Insurance',
+    name: 'Policy Renewal Follow-Up',
+    desc: 'Listen as ZIONA AI contacts a policyholder nearing renewal, answers coverage questions, and secures the renewal.',
     number: '+1 111 222 3334',
   },
 ];
@@ -44,7 +50,6 @@ const demos: { mode: DemoMode; name: string; desc: string; number: string }[] = 
 const modeConfig = {
   outbound: { label: 'Outbound', className: 'demo-badge-out' },
   inbound:  { label: 'Inbound',  className: 'demo-badge-in'  },
-  sms:      { label: 'SMS & Text', className: 'demo-badge-sms' },
 };
 
 export default function DemosSection() {
@@ -65,17 +70,17 @@ export default function DemosSection() {
             className="demo-card-new"
             href={`tel:${demo.number.replace(/\s/g, '')}`}
           >
-            <span className={`demo-badge ${modeConfig[demo.mode].className}`}>
-              <span className="demo-badge-dot" />
-              {modeConfig[demo.mode].label}
-            </span>
+            <div className="demo-card-header">
+              <span className={`demo-badge ${modeConfig[demo.mode].className}`}>
+                <span className="demo-badge-dot" />
+                {modeConfig[demo.mode].label}
+              </span>
+              <span className="demo-industry">{demo.industry}</span>
+            </div>
             <span className="demo-card-name">{demo.name}</span>
             <span className="demo-card-desc">{demo.desc}</span>
-            <span className={`demo-card-num${demo.mode === 'sms' ? ' demo-card-num-sms' : ''}`}>
-              {demo.mode === 'sms'
-                ? <MessageSquare size={13} />
-                : <Phone size={13} />
-              }
+            <span className="demo-card-num">
+              <Phone size={13} />
               {demo.number}
             </span>
           </a>
