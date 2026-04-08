@@ -61,7 +61,7 @@ export default function REWhy({ onTry }: REWhyProps) {
           </div>
 
           <button className="btn-primary" style={{ marginTop: '2rem' }} onClick={onTry}>
-            Try AI for Real Estate
+            TRY AI FOR REAL ESTATE
           </button>
         </div>
 

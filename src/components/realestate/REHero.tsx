@@ -55,8 +55,8 @@ export default function REHero({ onCTA }: REHeroProps) {
         </p>
 
         <div className="hero-btns">
-          <button className="btn-primary" onClick={() => scrollTo('re-demos')}>See AI in Action</button>
-          <button className="btn-ghost" onClick={onCTA}>Try for Free</button>
+          <button className="btn-primary" onClick={() => scrollTo('re-demos')}>SEE AI IN ACTION</button>
+          <button className="btn-ghost" onClick={onCTA}>TRY FOR FREE</button>
         </div>
 
         <div className="hero-tags">

@@ -136,7 +136,7 @@ export default function ContactSection() {
             style={{ marginTop: '0.5rem' }}
             disabled={status === 'loading'}
           >
-            {status === 'loading' ? 'Sending...' : 'Send Message'}
+            {status === 'loading' ? 'Sending...' : 'BOOK A FREE DEMO'}
           </button>
           {status === 'success' && (
             <div className="form-success">

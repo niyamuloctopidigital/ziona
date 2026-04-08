@@ -82,7 +82,7 @@ export default function PricingSection({ onGetStarted }: PricingSectionProps) {
               ))}
             </ul>
             <button className="plan-btn" onClick={onGetStarted}>
-              {plan.name === 'Free Plan' ? 'Get Started Free' : 'Get Started'}
+              GET STARTED
             </button>
           </div>
         ))}

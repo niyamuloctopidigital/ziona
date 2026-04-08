@@ -63,7 +63,7 @@ export default function REFeatures({ onBook }: REFeaturesProps) {
           </div>
 
           <button className="btn-primary" style={{ marginTop: '2rem' }} onClick={onBook}>
-            Schedule a Call
+            TRY AI FOR REAL ESTATE
           </button>
         </div>
       </div>

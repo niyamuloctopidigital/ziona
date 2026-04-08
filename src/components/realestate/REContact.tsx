@@ -99,7 +99,7 @@ export default function REContact() {
             />
           </div>
           <button type="submit" className="btn-primary" style={{ marginTop: '0.5rem' }} disabled={status === 'loading'}>
-            {status === 'loading' ? 'Sending...' : 'Book a Free Demo'}
+            {status === 'loading' ? 'Sending...' : 'BOOK A FREE DEMO'}
           </button>
           {status === 'success' && <div className="form-success">Message sent! We'll be in touch within 24 hours.</div>}
           {status === 'error' && <div className="form-error">Something went wrong. Please try again or email us directly.</div>}

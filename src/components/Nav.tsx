@@ -67,7 +67,7 @@ export default function Nav({ page, onNavigate }: NavProps) {
       </ul>
 
       <button className="btn-nav" onClick={() => scrollTo(`${prefix}contact`)}>
-        Book a Demo
+        Get Started
       </button>
     </nav>
   );

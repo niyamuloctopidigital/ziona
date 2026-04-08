@@ -11,7 +11,7 @@ const plans = [
       '1 AI Texting Agent',
       'Full platform access during trial',
     ],
-    cta: 'Get Started Free',
+    cta: 'GET STARTED',
     popular: false,
   },
   {
@@ -30,7 +30,7 @@ const plans = [
       'Unlimited calls & texts',
       'Minutes included monthly',
     ],
-    cta: 'Get Started',
+    cta: 'GET STARTED',
     popular: false,
   },
   {
@@ -49,7 +49,7 @@ const plans = [
       'META ad campaign build & management',
       'Ad spend included',
     ],
-    cta: 'Get Started',
+    cta: 'GET STARTED',
     popular: true,
   },
 ];

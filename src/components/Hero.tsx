@@ -55,8 +55,8 @@ export default function Hero() {
         </p>
 
         <div className="hero-btns">
-          <button className="btn-primary" onClick={() => scrollTo('demos')}>See AI in Action</button>
-          <button className="btn-ghost" onClick={() => scrollTo('contact')}>Try for Free</button>
+          <button className="btn-primary" onClick={() => scrollTo('demos')}>SEE AI IN ACTION</button>
+          <button className="btn-ghost" onClick={() => scrollTo('contact')}>TRY FOR FREE</button>
         </div>
 
         <div className="hero-tags">

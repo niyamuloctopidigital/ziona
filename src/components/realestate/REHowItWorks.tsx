@@ -59,7 +59,7 @@ export default function REHowItWorks({ onBook }: REHowItWorksProps) {
 
       <div className="how-cta">
         <button className="btn-primary" onClick={onBook}>
-          Book a Free Demo
+          SCHEDULE A CALL
         </button>
       </div>
     </section>

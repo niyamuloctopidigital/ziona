@@ -59,7 +59,7 @@ export default function HowItWorks() {
 
       <div className="how-cta">
         <button className="btn-primary" onClick={() => scrollTo('contact')}>
-          Start Using AI Today
+          SCHEDULE A CALL
         </button>
       </div>
     </section>

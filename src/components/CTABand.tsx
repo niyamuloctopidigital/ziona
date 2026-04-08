@@ -12,7 +12,7 @@ export default function CTABand({ onBook }: CTABandProps) {
           Book a 15-minute live demo. Watch the AI qualify a real lead in real time. No pressure — just proof of what's possible.
         </p>
         <button className="btn-primary" onClick={onBook}>
-          Book Your Free Demo
+          BOOK A FREE DEMO
         </button>
       </div>
     </div>
