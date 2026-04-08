@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { X, Mail, Phone } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
+const POPUP_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/O7FdFwAXD339u8MjAKQH/webhook-trigger/a4b3154d-0e6c-4155-b307-968f8c21adfb';
+
 interface DemoPopupProps {
   delay?: number;
 }
@@ -14,17 +16,11 @@ export default function DemoPopup({ delay = 3000 }: DemoPopupProps) {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    sessionStorage.removeItem('demo-popup-dismissed');
-    const key = 'demo-popup-ts';
-    const last = localStorage.getItem(key);
-    const now = Date.now();
-    if (last && now - Number(last) < 24 * 60 * 60 * 1000) return;
     const t = setTimeout(() => setOpen(true), delay);
     return () => clearTimeout(t);
   }, [delay]);
 
   const close = () => {
-    localStorage.setItem('demo-popup-ts', String(Date.now()));
     setOpen(false);
   };
 
@@ -40,22 +36,31 @@ export default function DemoPopup({ delay = 3000 }: DemoPopupProps) {
       return;
     }
     setLoading(true);
-    const { error: dbError } = await supabase.from('demo_popup_leads').insert({
-      first_name: form.firstName,
-      last_name: form.lastName,
-      phone: form.phone,
-      email: form.email,
-    });
+
+    await Promise.allSettled([
+      supabase.from('demo_popup_leads').insert({
+        first_name: form.firstName,
+        last_name: form.lastName,
+        phone: form.phone,
+        email: form.email,
+      }),
+      fetch(POPUP_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          first_name: form.firstName,
+          last_name: form.lastName,
+          phone: form.phone,
+          email: form.email,
+        }),
+      }),
+    ]);
+
     setLoading(false);
-    if (dbError) {
-      setError('Something went wrong. Please try again.');
-    } else {
-      setSubmitted(true);
-      setTimeout(() => {
-        localStorage.setItem('demo-popup-ts', String(Date.now()));
-        setOpen(false);
-      }, 3000);
-    }
+    setSubmitted(true);
+    setTimeout(() => {
+      setOpen(false);
+    }, 3000);
   };
 
   if (!open) return null;
