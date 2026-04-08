@@ -8,8 +8,6 @@ export default function Nav({ page, onNavigate }: NavProps) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const prefix = page === 'realestate' ? 're-' : '';
-
   const homeLinks = [
     { label: 'How It Works', id: 'how-it-works' },
     { label: 'Features',     id: 'features'     },
@@ -27,13 +25,21 @@ export default function Nav({ page, onNavigate }: NavProps) {
   ];
 
   const links = page === 'realestate' ? reLinks : homeLinks;
+  const prefix = page === 'realestate' ? 're-' : '';
 
   return (
     <nav>
       <a
         className="nav-logo"
-        href="#home"
-        onClick={(e) => { e.preventDefault(); scrollTo(`${prefix}home`); }}
+        href="/"
+        onClick={(e) => {
+          e.preventDefault();
+          if (page === 'home') {
+            scrollTo('home');
+          } else {
+            onNavigate('home');
+          }
+        }}
       >
         <img src="https://zionaai.octopi-digital.com/wp-content/uploads/2026/02/Frame-2147226786.webp" alt="ZIONA AI" style={{ height: '36px', width: 'auto' }} />
       </a>
@@ -48,12 +54,11 @@ export default function Nav({ page, onNavigate }: NavProps) {
         ))}
         <li>
           <a
-            href="#"
+            href={page === 'realestate' ? '/' : '/realestate'}
             className={page === 'realestate' ? 'nav-page-active' : 'nav-page-link'}
             onClick={(e) => {
               e.preventDefault();
               onNavigate(page === 'realestate' ? 'home' : 'realestate');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
             {page === 'realestate' ? '← All Industries' : 'For Real Estate'}
