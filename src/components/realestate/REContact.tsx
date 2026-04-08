@@ -62,9 +62,9 @@ export default function REContact() {
           <p className="section-sub" style={{ marginBottom: '2rem' }}>
             Curious how ZIONA AI integrates with your prospecting workflow? Want to see live examples of it handling seller and buyer calls? Our team is ready to walk you through everything — no pressure, just results.
           </p>
-          <a className="contact-link" href="mailto:abdc@gmail.com">
+          <a className="contact-link" href="mailto:info@zionaai.com">
             <span className="contact-link-icon"><PulseIcon icon={Mail} size={16} /></span>
-            abdc@gmail.com
+            info@zionaai.com
           </a>
           <a className="contact-link" href="tel:">
             <span className="contact-link-icon"><PulseIcon icon={Phone} size={16} /></span>
