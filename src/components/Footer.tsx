@@ -1,9 +1,17 @@
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
+
 const links = [
   { label: 'How It Works', id: 'how-it-works' },
   { label: 'Features', id: 'features' },
   { label: 'Demos', id: 'demos' },
   { label: 'Pricing', id: 'pricing' },
   { label: 'Contact', id: 'contact' },
+];
+
+const socials = [
+  { icon: Facebook,  href: '#', label: 'Facebook'  },
+  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Linkedin,  href: '#', label: 'LinkedIn'  },
 ];
 
 export default function Footer() {
@@ -23,16 +31,22 @@ export default function Footer() {
       <ul className="footer-links">
         {links.map((l) => (
           <li key={l.id}>
-            <a
-              href={`#${l.id}`}
-              onClick={(e) => { e.preventDefault(); scrollTo(l.id); }}
-            >
+            <a href={`#${l.id}`} onClick={(e) => { e.preventDefault(); scrollTo(l.id); }}>
               {l.label}
             </a>
           </li>
         ))}
       </ul>
-      <p>© 2026 ZIONA AI. All rights reserved.</p>
+      <div className="footer-right">
+        <div className="footer-socials">
+          {socials.map(({ icon: Icon, href, label }) => (
+            <a key={label} href={href} aria-label={label} className="footer-social-icon">
+              <Icon size={16} />
+            </a>
+          ))}
+        </div>
+        <p>© 2026 ZIONA AI. All rights reserved.</p>
+      </div>
     </footer>
   );
 }

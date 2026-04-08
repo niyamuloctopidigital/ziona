@@ -1,9 +1,17 @@
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
+
 const links = [
   { label: 'How It Works', id: 're-how-it-works' },
   { label: 'Features', id: 're-features' },
   { label: 'Demos', id: 're-demos' },
   { label: 'Pricing', id: 're-pricing' },
   { label: 'Contact', id: 're-contact' },
+];
+
+const socials = [
+  { icon: Facebook,  href: '#', label: 'Facebook'  },
+  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Linkedin,  href: '#', label: 'LinkedIn'  },
 ];
 
 export default function REFooter() {
@@ -29,7 +37,16 @@ export default function REFooter() {
           </li>
         ))}
       </ul>
-      <p>© 2026 ZIONA AI. All rights reserved. &nbsp;·&nbsp; Real Estate Solutions</p>
+      <div className="footer-right">
+        <div className="footer-socials">
+          {socials.map(({ icon: Icon, href, label }) => (
+            <a key={label} href={href} aria-label={label} className="footer-social-icon">
+              <Icon size={16} />
+            </a>
+          ))}
+        </div>
+        <p>© 2026 ZIONA AI. All rights reserved. &nbsp;·&nbsp; Real Estate</p>
+      </div>
     </footer>
   );
 }
