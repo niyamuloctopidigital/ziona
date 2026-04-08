@@ -11,6 +11,7 @@ import CTABand from './components/CTABand';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import RealEstatePage from './pages/RealEstatePage';
+import DemoPopup from './components/DemoPopup';
 
 function getPage(): 'home' | 'realestate' {
   return window.location.pathname === '/realestate' ? 'realestate' : 'home';
@@ -38,6 +39,7 @@ function App() {
 
   return (
     <>
+      <DemoPopup delay={3000} />
       <Nav page={page} onNavigate={navigate} />
       {page === 'home' ? (
         <>
