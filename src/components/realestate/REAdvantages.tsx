@@ -209,6 +209,9 @@ export default function REAdvantages({ onTry }: REAdvantagesProps) {
           max-width: 1200px;
           margin: 0 auto;
         }
+        .rea-left {
+          min-height: 100%;
+        }
         .rea-eyebrow {
           font-size: 10px;
           font-weight: 600;
@@ -312,6 +315,9 @@ export default function REAdvantages({ onTry }: REAdvantagesProps) {
           flex-direction: column;
           gap: 14px;
           padding-top: 8px;
+          position: sticky;
+          top: 80px;
+          align-self: start;
         }
         .rea-card {
           border-radius: 16px;
