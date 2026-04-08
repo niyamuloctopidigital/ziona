@@ -1,15 +1,43 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { ArrowUpRight, Calendar, Clock, TrendingUp, Phone } from 'lucide-react';
 
 interface REWhyProps {
   onTry: () => void;
 }
 
-const ACTIVITY = [
-  { name: 'Sarah M.', status: 'Qualified', time: '2m ago', tag: 'Booked', tagColor: '#34d399', dot: '#34d399' },
-  { name: 'James R.', status: 'Outreach', time: '5m ago', tag: 'Calling', tagColor: '#a78bfa', dot: '#a78bfa' },
-  { name: 'David K.', status: 'Follow-up', time: '11m ago', tag: 'Booked', tagColor: '#34d399', dot: '#6b7280' },
+const FIRST_NAMES = ['Sarah', 'James', 'David', 'Emily', 'Michael', 'Jessica', 'Ryan', 'Ashley', 'Chris', 'Megan', 'Tyler', 'Lauren', 'Brandon', 'Nicole', 'Kevin', 'Stephanie', 'Jason', 'Rachel', 'Justin', 'Amanda', 'Kyle', 'Brittany', 'Eric', 'Samantha', 'Nathan', 'Heather', 'Adam', 'Melissa', 'Josh', 'Tiffany'];
+const LAST_INITIALS = ['M', 'R', 'K', 'T', 'W', 'B', 'H', 'C', 'D', 'S', 'L', 'P', 'N', 'G', 'F'];
+const STATUSES = ['Qualified', 'Outreach', 'Follow-up', 'Nurturing', 'Interested', 'Callback Set', 'Hot Lead', 'Reconnect'];
+const TAGS: { label: string; color: string }[] = [
+  { label: 'Booked', color: '#34d399' },
+  { label: 'Calling', color: '#a78bfa' },
+  { label: 'Booked', color: '#34d399' },
+  { label: 'Qualified', color: '#34d399' },
+  { label: 'In Queue', color: '#fbbf24' },
+  { label: 'Booked', color: '#34d399' },
+  { label: 'Calling', color: '#a78bfa' },
+  { label: 'Scheduled', color: '#34d399' },
 ];
+const DOT_COLORS = ['#34d399', '#a78bfa', '#6b7280', '#fbbf24', '#34d399', '#a78bfa'];
+
+function randInt(max: number) { return Math.floor(Math.random() * max); }
+
+function generateActivity() {
+  return Array.from({ length: 3 }, (_, i) => {
+    const tag = TAGS[randInt(TAGS.length)];
+    const dot = DOT_COLORS[randInt(DOT_COLORS.length)];
+    const mins = [randInt(4) + 1, randInt(8) + 4, randInt(12) + 8][i];
+    return {
+      name: `${FIRST_NAMES[randInt(FIRST_NAMES.length)]} ${LAST_INITIALS[randInt(LAST_INITIALS.length)]}.`,
+      status: STATUSES[randInt(STATUSES.length)],
+      time: `${mins}m ago`,
+      tag: tag.label,
+      tagColor: tag.color,
+      dot,
+      key: Math.random(),
+    };
+  });
+}
 
 function useCountUp(target: number, duration = 1800, start = false) {
   const [val, setVal] = useState(0);
@@ -30,6 +58,10 @@ function useCountUp(target: number, duration = 1800, start = false) {
 export default function REWhy({ onTry }: REWhyProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [activity, setActivity] = useState(() => generateActivity());
+  const [fadingIdx, setFadingIdx] = useState<number | null>(null);
+  const [callsBase, setCallsBase] = useState(1284);
+  const [apptsBase, setApptsBase] = useState(47);
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -40,8 +72,51 @@ export default function REWhy({ onTry }: REWhyProps) {
     return () => obs.disconnect();
   }, []);
 
-  const calls = useCountUp(1284, 1800, visible);
-  const appts = useCountUp(47, 1400, visible);
+  const refreshRow = useCallback((idx: number) => {
+    setFadingIdx(idx);
+    setTimeout(() => {
+      setActivity(prev => {
+        const next = [...prev];
+        const tag = TAGS[randInt(TAGS.length)];
+        const dot = DOT_COLORS[randInt(DOT_COLORS.length)];
+        const mins = [randInt(4) + 1, randInt(8) + 4, randInt(12) + 8][idx];
+        next[idx] = {
+          name: `${FIRST_NAMES[randInt(FIRST_NAMES.length)]} ${LAST_INITIALS[randInt(LAST_INITIALS.length)]}.`,
+          status: STATUSES[randInt(STATUSES.length)],
+          time: `${mins}m ago`,
+          tag: tag.label,
+          tagColor: tag.color,
+          dot,
+          key: Math.random(),
+        };
+        return next;
+      });
+      setFadingIdx(null);
+    }, 400);
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+    const intervals = [
+      setInterval(() => refreshRow(0), 3200),
+      setInterval(() => refreshRow(1), 4800),
+      setInterval(() => refreshRow(2), 6100),
+    ];
+    const callsInterval = setInterval(() => {
+      setCallsBase(prev => prev + randInt(4) + 1);
+    }, 5000);
+    const apptsInterval = setInterval(() => {
+      if (Math.random() > 0.5) setApptsBase(prev => prev + 1);
+    }, 8000);
+    return () => {
+      intervals.forEach(clearInterval);
+      clearInterval(callsInterval);
+      clearInterval(apptsInterval);
+    };
+  }, [visible, refreshRow]);
+
+  const calls = useCountUp(callsBase, 1800, visible);
+  const appts = useCountUp(apptsBase, 1400, visible);
 
   return (
     <section ref={ref} className="re-why-section">
@@ -72,9 +147,19 @@ export default function REWhy({ onTry }: REWhyProps) {
           {/* Recent Activity */}
           <div className="re-glass-card re-card-activity">
             <div className="re-card-shimmer" />
-            <span className="re-card-eyebrow" style={{ marginBottom: 14 }}>RECENT ACTIVITY</span>
-            {ACTIVITY.map((a, i) => (
-              <div key={i} className="re-activity-row" style={{ animationDelay: `${0.3 + i * 0.12}s` }}>
+            <div className="re-act-header">
+              <span className="re-card-eyebrow">RECENT ACTIVITY</span>
+              <span className="re-act-live-badge">
+                <span className="re-act-live-dot" />
+                LIVE
+              </span>
+            </div>
+            {activity.map((a, i) => (
+              <div
+                key={a.key}
+                className={`re-activity-row${fadingIdx === i ? ' re-act-fading' : ''}`}
+                style={{ animationDelay: `${0.3 + i * 0.12}s` }}
+              >
                 <span className="re-act-dot" style={{ background: a.dot }} />
                 <span className="re-act-name">{a.name}</span>
                 <span className="re-act-status">— {a.status}</span>
@@ -264,6 +349,32 @@ export default function REWhy({ onTry }: REWhyProps) {
         }
         /* Activity */
         .re-card-activity { padding-bottom: 16px; }
+        .re-act-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 14px;
+        }
+        .re-act-live-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: .1em;
+          color: #34d399;
+          background: rgba(52,211,153,.1);
+          border: 1px solid rgba(52,211,153,.25);
+          padding: 2px 8px;
+          border-radius: 99px;
+        }
+        .re-act-live-dot {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: #34d399;
+          animation: re-pulse 1.4s ease-in-out infinite;
+        }
         .re-activity-row {
           display: flex;
           align-items: center;
@@ -271,8 +382,13 @@ export default function REWhy({ onTry }: REWhyProps) {
           padding: 7px 0;
           border-bottom: 1px solid rgba(255,255,255,0.05);
           animation: re-why-fadein .5s ease both;
+          transition: opacity .35s ease, transform .35s ease;
         }
         .re-activity-row:last-child { border-bottom: none; }
+        .re-act-fading {
+          opacity: 0 !important;
+          transform: translateX(8px);
+        }
         .re-act-dot {
           width: 7px;
           height: 7px;
