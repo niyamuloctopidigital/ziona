@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import PulseIcon from '../PulseIcon';
 
@@ -65,9 +65,6 @@ export default function REContact() {
           <a className="contact-link" href="mailto:info@zionaai.com">
             <span className="contact-link-icon"><PulseIcon icon={Mail} size={16} /></span>
             info@zionaai.com
-          </a>
-          <a className="contact-link" href="tel:">
-            <span className="contact-link-icon"><PulseIcon icon={Phone} size={16} /></span>
           </a>
         </div>
 
