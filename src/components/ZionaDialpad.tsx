@@ -267,10 +267,6 @@ export default function ZionaDialpad() {
                   <span>Lead Active</span>
                 </div>
               </div>
-              <div style={S.footer}>
-                <span style={S.footerNote}>Appointment captured automatically</span>
-                <span style={S.bookedBadge}>&#10003; Booked</span>
-              </div>
             </div>
           )}
         </div>
