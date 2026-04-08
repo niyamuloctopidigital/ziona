@@ -14,14 +14,17 @@ export default function DemoPopup({ delay = 3000 }: DemoPopupProps) {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const dismissed = sessionStorage.getItem('demo-popup-dismissed');
-    if (dismissed) return;
+    sessionStorage.removeItem('demo-popup-dismissed');
+    const key = 'demo-popup-ts';
+    const last = localStorage.getItem(key);
+    const now = Date.now();
+    if (last && now - Number(last) < 24 * 60 * 60 * 1000) return;
     const t = setTimeout(() => setOpen(true), delay);
     return () => clearTimeout(t);
   }, [delay]);
 
   const close = () => {
-    sessionStorage.setItem('demo-popup-dismissed', '1');
+    localStorage.setItem('demo-popup-ts', String(Date.now()));
     setOpen(false);
   };
 
@@ -49,7 +52,7 @@ export default function DemoPopup({ delay = 3000 }: DemoPopupProps) {
     } else {
       setSubmitted(true);
       setTimeout(() => {
-        sessionStorage.setItem('demo-popup-dismissed', '1');
+        localStorage.setItem('demo-popup-ts', String(Date.now()));
         setOpen(false);
       }, 3000);
     }
