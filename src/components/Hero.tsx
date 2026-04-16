@@ -43,15 +43,14 @@ export default function Hero() {
   return (
     <section className="hero" id="home" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <div ref={parallaxRef} className="hero-content">
-        <div className="hero-pill">Inbound & Outbound Calling Agent</div>
+        <div className="hero-pill">AI-Powered Outbound Sales Team</div>
 
         <h1>
-          Your AI Agent That<br />
-          <span>Calls, Answers & Closes.</span>
+          AI That Calls, Follows Up, and <span> Books Meetings So You Close </span> More Deals.
         </h1>
 
         <p className="hero-sub">
-          ZIONA AI handles every inbound call and drives outbound outreach — qualifying leads, booking appointments, and following up automatically. Works across any industry, around the clock.
+          Your AI-powered outbound sales team handles cold calling, lead qualification, and appointment setting — fully automated. Never miss a follow-up again.
         </p>
 
         <div className="hero-btns">
@@ -61,8 +60,9 @@ export default function Hero() {
 
         <div className="hero-tags">
           <span className="hero-tag">Outbound AI Calling</span>
-          <span className="hero-tag">Inbound AI Receptionist</span>
-          <span className="hero-tag">AI SMS & Follow-Up</span>
+          <span className="hero-tag">Lead Qualification</span>
+          <span className="hero-tag">Appointment Setting</span>
+          <span className="hero-tag">AI SMS Follow-Up</span>
         </div>
 
         <div className="hero-stats">

@@ -29,33 +29,13 @@ const CheckSVG = ({ d }: { d: string }) => (
 
 const features = [
   {
-    title: 'More Leads. Less Manual Work.',
-    desc: 'ZIONA AI runs 24/7 through your lead lists — outbound prospecting and inbound answering — without you dialing a single number.',
+    title: 'Never Let a Hot Lead Go Cold',
+    desc: 'AI responds to every inquiry within 60 seconds. That FSBO who filled out your form at 9pm? Called by 9:01pm. Speed wins listings.',
     svg: () => <CheckSVG d="M3 8l3 3 7-7" />,
   },
   {
-    title: 'Your Database Gets Smarter Over Time',
-    desc: 'Every call enriches your CRM with validated contact data. Your number accuracy compounds and list quality grows automatically.',
-    svg: () => (
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <ellipse cx="8" cy="8" rx="6" ry="6" stroke="#a78bfa" strokeWidth="1.3" />
-        <path d="M8 5v3l2 2" stroke="#a78bfa" strokeWidth="1.3" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Zero Leads Fall Through the Cracks',
-    desc: 'Every inbound enquiry gets an instant response. Every outbound lead is followed up consistently. No voicemail. No dropped opportunities.',
-    svg: () => (
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M8 2v4M8 10v4M2 8h4M10 8h4" stroke="#a78bfa" strokeWidth="1.3" strokeLinecap="round" />
-        <circle cx="8" cy="8" r="2" stroke="#a78bfa" strokeWidth="1.3" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Scale Without Growing Your Payroll',
-    desc: 'A top-performing ISA costs $40K–$70K a year. ZIONA AI gives you a full inside-sales team output for a fraction of the cost.',
+    title: 'Stop Paying ISAs $4,000/Month',
+    desc: 'Get the output of 3–5 inside sales agents for a fraction of the cost. No hiring, no training, no managing people — just more appointments.',
     svg: () => (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <rect x="2" y="6" width="3" height="7" rx="1" fill="#a78bfa" />
@@ -65,12 +45,22 @@ const features = [
     ),
   },
   {
-    title: 'Conversations That Sound Human',
-    desc: 'Trained on real estate scripts and conversational best practices — every call sounds natural, professional, and on-brand.',
+    title: 'Your Database Actually Gets Called',
+    desc: 'Those 2,000 contacts sitting in your CRM? AI works through them systematically. Every expired listing, every past client, every sphere contact — finally gets touched.',
     svg: () => (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M3 12.5C3 10 5 8.5 8 8.5s5 1.5 5 4" stroke="#a78bfa" strokeWidth="1.3" strokeLinecap="round" />
-        <circle cx="8" cy="5" r="2.5" stroke="#a78bfa" strokeWidth="1.3" />
+        <path d="M8 2v4M8 10v4M2 8h4M10 8h4" stroke="#a78bfa" strokeWidth="1.3" strokeLinecap="round" />
+        <circle cx="8" cy="8" r="2" stroke="#a78bfa" strokeWidth="1.3" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Perfect Follow-Up Every Time',
+    desc: 'AI never forgets to call back. That seller who said "maybe in 90 days"? AI calls them in exactly 90 days. Zero leads fall through the cracks.',
+    svg: () => (
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <ellipse cx="8" cy="8" rx="6" ry="6" stroke="#a78bfa" strokeWidth="1.3" />
+        <path d="M8 5v3l2 2" stroke="#a78bfa" strokeWidth="1.3" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -100,11 +90,11 @@ export default function REAdvantages({ onTry }: REAdvantagesProps) {
         <div className="rea-left">
           <p className="rea-eyebrow">The Advantages</p>
           <h2 className="rea-headline">
-            Why Top-Producing<br />Agents Choose<br />
-            <em className="rea-headline-em">ZIONA AI</em>
+            More Listings,<br />
+            <em className="rea-headline-em">Less Grinding.</em>
           </h2>
           <p className="rea-sub">
-            Whether you're a solo agent or running a team, ZIONA AI handles the prospecting volume that no human team can match — at a price that makes sense.
+            ZIONA AI works your database while you close deals — calling expired listings, following up FSBOs, and never letting a lead go cold.
           </p>
 
           <div className="rea-feat-list">
@@ -123,10 +113,10 @@ export default function REAdvantages({ onTry }: REAdvantagesProps) {
 
           <div className="rea-cta-row">
             <button className="rea-btn" onClick={onTry}>
-              Try AI for Real Estate
+              See How It Works for Real Estate
               <span className="rea-btn-icon"><ArrowUpRight size={12} /></span>
             </button>
-            <span className="rea-cta-note">No credit card required &nbsp;·&nbsp; Live in 24 hours</span>
+            <span className="rea-cta-note">10-day free trial &nbsp;·&nbsp; No credit card required</span>
           </div>
         </div>
 

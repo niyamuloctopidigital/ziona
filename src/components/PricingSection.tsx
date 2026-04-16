@@ -2,50 +2,58 @@ const plans = [
   {
     name: 'Free Plan',
     price: '$0',
-    period: '/ 10-day trial',
-    tagline: 'Experience the full power of ZIONA AI before committing a single dollar.',
+    period: '10-Day Free Trial',
+    tagline: 'Test it on your real leads. Experience the full power of ZIONA AI before spending a dollar.',
+    setup: null,
     features: [
-      '1 AI Outbound Calling Agent',
-      '1 AI Receptionist (Inbound)',
-      '1 AI Texting Agent',
-      'Full platform access during trial',
+      '1 AI calling agent',
+      '1 AI receptionist',
+      '1 AI texting agent',
+      'Test it on your real leads',
     ],
+    bestFor: null,
+    cta: 'START FREE TRIAL',
     popular: false,
   },
   {
     name: 'Growth Plan',
     price: '$500',
     period: '/ month',
-    tagline: 'For solo agents and small teams ready to scale their outreach intelligently.',
+    tagline: 'Best for solo operators or small teams (2–5 people) ready to scale outreach without extra staff.',
+    setup: '$497 one-time setup (waived if paid annually)',
     features: [
-      'Unlimited AI text messaging',
-      'Unlimited AI inbound agents',
       '1 AI outbound caller',
-      'Unlimited workflow automations',
-      'Real estate conversion scripts',
-      'Lifetime technical support',
+      'Unlimited AI texting',
+      'Unlimited inbound call handling',
       '2,000 minutes included',
-      '$0.29 / min beyond 2,000',
+      '$0.29 / min after 2,000',
+      'Industry-specific calling scripts',
+      'Lifetime tech support',
+      'Works with major CRMs',
     ],
-    popular: false,
+    bestFor: 'Solo operators or small teams (2–5 people)',
+    cta: 'GET STARTED',
+    popular: true,
   },
   {
     name: 'Scale Plan',
     price: '$1,500',
     period: '/ month',
-    tagline: 'For high-producing agents and teams who want AI running at full capacity.',
+    tagline: 'Best for teams, brokerages, or high-volume operations running full-capacity AI outreach.',
+    setup: '$0 setup fee',
     features: [
       'Unlimited AI outbound calling',
-      'Unlimited AI receptionists',
-      'Unlimited workflow automations',
-      'Real estate conversion scripts',
-      'Dedicated tech development team',
+      'Unlimited AI receptionist',
       '2,000 minutes included',
-      'Guaranteed 25 monthly leads',
-      'Meta Ads management — free',
-      'Transaction coordinator included',
+      '$0.29 / min after 2,000',
+      'Custom scripts included',
+      'Dedicated tech support team',
+      'BONUS: Meta ads management included',
+      'BONUS: Transaction coordination included',
     ],
-    popular: true,
+    bestFor: 'Teams, brokerages, or high-volume operations',
+    cta: 'GET STARTED',
+    popular: false,
   },
 ];
 
@@ -59,10 +67,10 @@ export default function PricingSection({ onGetStarted }: PricingSectionProps) {
       <div className="text-center">
         <span className="section-tag">Pricing</span>
         <h2 className="section-title">
-          Flexible Plans for <em>Every Stage</em>
+          Plans Built for <em>Every Business</em>
         </h2>
         <p className="section-sub" style={{ margin: '0 auto' }}>
-          No hidden charges. No long-term lock-ins. Just results.
+          One new client pays for 6–12 months. Everything after that is pure profit.
         </p>
       </div>
 
@@ -71,6 +79,7 @@ export default function PricingSection({ onGetStarted }: PricingSectionProps) {
           <div key={plan.name} className={`plan${plan.popular ? ' popular' : ''}`}>
             {plan.popular && <div className="popular-badge">Most Popular</div>}
             <div className="plan-name">{plan.name}</div>
+            {plan.setup && <p className="re-plan-startup">{plan.setup}</p>}
             <div className="plan-price-row">
               <big>{plan.price}</big>
               <span>{plan.period}</span>
@@ -82,15 +91,15 @@ export default function PricingSection({ onGetStarted }: PricingSectionProps) {
               ))}
             </ul>
             <button className="plan-btn" onClick={onGetStarted}>
-              GET STARTED
+              {plan.cta}
             </button>
           </div>
         ))}
       </div>
 
       <p className="pricing-footnote">
-        One-time setup fee applies to paid plans &nbsp;·&nbsp; Cancel anytime with 30 days notice<br />
-        Compare: a full-time ISA costs $40K–$70K/year &nbsp;·&nbsp; ZIONA AI Scale: $18,000/year
+        Average revenue per new client: $8,000–$12,000 &nbsp;·&nbsp; ZIONA AI cost: $500–$1,500/month<br />
+        Close just ONE extra deal and you're profitable for the year &nbsp;·&nbsp; Cancel anytime with 30 days notice
       </p>
     </section>
   );

@@ -205,11 +205,11 @@ export default function REWhy({ onTry }: REWhyProps) {
         <div className="re-why-right">
           <p className="re-why-eyebrow">WHY IT WORKS</p>
           <h2 className="re-why-headline">
-            Stop Chasing Leads.<br />
-            <em className="re-why-em">Start Closing Deals.</em>
+            More Listings,<br />
+            <em className="re-why-em">Less Grinding.</em>
           </h2>
           <p className="re-why-sub">
-            ZIONA AI is your always-on inside sales agent — making calls, qualifying prospects, and filling your schedule while you're out on showings.
+            ZIONA AI is your always-on inside sales agent — calling expired listings, FSBOs, and past clients while you focus on what matters most: closing deals.
           </p>
 
           <div className="re-feat-list">
@@ -228,7 +228,7 @@ export default function REWhy({ onTry }: REWhyProps) {
 
           <div className="re-why-cta-row">
             <button className="re-why-btn" onClick={onTry}>
-              TRY AI FOR REAL ESTATE
+              SEE HOW IT WORKS FOR REAL ESTATE
               <span className="re-why-btn-icon"><ArrowUpRight size={13} /></span>
             </button>
           </div>
@@ -543,18 +543,23 @@ export default function REWhy({ onTry }: REWhyProps) {
 
 const features = [
   {
-    Icon: Calendar,
-    title: 'Listing Appointments on Autopilot',
-    desc: 'Calls seller leads, qualifies motivation and timeline, and books listing appointments directly into your calendar.',
-  },
-  {
-    Icon: Clock,
-    title: 'Instant Speed-to-Lead',
-    desc: 'Every new lead is contacted within seconds of enquiring. ZIONA never lets a hot lead cool down.',
+    Icon: Phone,
+    title: 'Never Let a Hot Lead Go Cold',
+    desc: 'AI responds to every inquiry within 60 seconds. That FSBO who filled out your form at 9pm? Called by 9:01pm.',
   },
   {
     Icon: TrendingUp,
-    title: 'Real-Time Pipeline Intelligence',
-    desc: 'Know exactly where each lead stands — motivation, timeframe, and engagement — so every conversation is informed.',
+    title: 'Stop Paying ISAs $4,000/Month',
+    desc: 'Get the output of 3–5 inside sales agents for a fraction of the cost. No hiring, training, or managing people.',
+  },
+  {
+    Icon: Calendar,
+    title: 'Your Database Actually Gets Called',
+    desc: 'Those 2,000 contacts in your CRM? AI works through them systematically. Every expired listing, every past client — finally gets touched.',
+  },
+  {
+    Icon: Clock,
+    title: 'Perfect Follow-Up Every Time',
+    desc: 'AI never forgets to call back. That seller who said "maybe in 90 days"? AI calls them in exactly 90 days. Zero leads fall through the cracks.',
   },
 ];

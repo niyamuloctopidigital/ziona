@@ -7,12 +7,12 @@ export default function CTABand({ onBook }: CTABandProps) {
     <div className="cta-band">
       <div className="cta-glow" />
       <div className="cta-inner">
-        <h2>Ready to Let AI Work Your Pipeline?</h2>
+        <h2>Start Booking More Appointments This Week</h2>
         <p>
-          Book a 15-minute live demo. Watch the AI qualify a real lead in real time. No pressure — just proof of what's possible.
+          Try ZIONA AI free for 10 days. If it doesn't book appointments, cancel. No questions asked.
         </p>
         <button className="btn-primary" onClick={onBook}>
-          BOOK A FREE DEMO
+          START FREE TRIAL
         </button>
       </div>
     </div>

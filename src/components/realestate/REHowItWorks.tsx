@@ -95,13 +95,13 @@ export default function REHowItWorks({ onBook }: REHowItWorksProps) {
       </div>
 
       <div style={S.right}>
-        <p style={S.eyebrow}>Why it works</p>
+        <p style={S.eyebrow}>Stop Chasing Leads</p>
         <h2 style={S.headline}>
           Stop Chasing Leads.<br />
-          <span style={S.headlineSpan}>Start Closing Deals.</span>
+          <span style={S.headlineSpan}>Start Listing Homes.</span>
         </h2>
         <p style={S.bodyText}>
-          ZIONA AI is your always-on inside sales agent — making calls, qualifying prospects, and filling your schedule while you're out on showings.
+          AI That Works Your Database While You Close Deals. ZIONA AI calls expired listings, follows up FSBOs, and books qualified appointments directly to your calendar.
         </p>
 
         <div style={S.features}>
@@ -119,7 +119,7 @@ export default function REHowItWorks({ onBook }: REHowItWorksProps) {
         </div>
 
         <button style={S.ctaBtn} onClick={onBook}>
-          Try AI for Real Estate
+          Book A Strategy Call
           <span style={S.arrowBadge}><ArrowUpRight size={11} /></span>
         </button>
       </div>
@@ -160,7 +160,7 @@ export default function REHowItWorks({ onBook }: REHowItWorksProps) {
 const feats = [
   {
     title: 'Listing Appointments on Autopilot',
-    desc: 'Calls seller leads, qualifies motivation and timeline, and books listing appointments directly into your calendar.',
+    desc: 'AI calls your expired listings and FSBOs, books qualified appointments directly to your calendar — without you lifting a finger.',
     svg: () => (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <rect x="2" y="3" width="12" height="10" rx="2" stroke="#9b6dff" strokeWidth="1.3"/>
@@ -169,8 +169,8 @@ const feats = [
     ),
   },
   {
-    title: 'Instant Speed-to-Lead',
-    desc: 'Every new lead is contacted within seconds of enquiring. ZIONA never lets a hot lead cool down.',
+    title: 'Perfect Follow-Up Every Time',
+    desc: 'Every lead gets touched within 60 seconds. No more "I\'ll call them back tomorrow" — you won\'t, but AI will.',
     svg: () => (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M8 2v5l3 2" stroke="#9b6dff" strokeWidth="1.3" strokeLinecap="round"/>
@@ -179,8 +179,8 @@ const feats = [
     ),
   },
   {
-    title: 'Real-Time Pipeline Intelligence',
-    desc: 'Know exactly where each lead stands — motivation, timeframe, and engagement — so every conversation is informed.',
+    title: 'Only Talk to Ready Sellers',
+    desc: 'AI qualifies motivation, timeline, and price expectations before they hit your calendar. Stop wasting time on leads that aren\'t ready.',
     svg: () => (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M2 11.5L5.5 7.5L8.5 9.5L12 5" stroke="#9b6dff" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>

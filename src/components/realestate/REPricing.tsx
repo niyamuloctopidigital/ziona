@@ -1,56 +1,56 @@
 const plans = [
   {
-    name: 'Free Trial',
+    name: 'FREE Plan',
     price: '$0',
-    period: '10-day trial',
+    period: '10-Day Free Trial',
     startup: null,
-    tagline: 'Get full access to ZIONA AI and experience real estate lead conversion before spending a dollar.',
+    tagline: 'Test it on your real leads — expired listings, FSBOs, past clients. No credit card required.',
     features: [
-      '1 AI Outbound Calling Agent',
-      '1 AI Receptionist (Inbound)',
-      '1 AI Texting Agent',
-      'Full platform access during trial',
+      '1 AI calling agent',
+      '1 AI receptionist',
+      '1 AI texting agent',
+      'Test it on your real leads — expired listings, FSBOs, past clients',
     ],
-    cta: 'GET STARTED',
+    cta: 'START FREE TRIAL',
     popular: false,
   },
   {
-    name: 'Scaling Agent',
-    price: '$490',
+    name: 'Growth Plan',
+    price: '$500',
     period: '/ month',
-    startup: 'One-time setup fee applies',
-    tagline: 'Built for the solo agent who wants to run a high-volume prospecting operation without extra staff.',
+    startup: '$497 one-time setup (waived if paid annually)',
+    tagline: 'Best for solo agents or small teams (2–5 agents) ready to book more listing appointments.',
     features: [
-      'Speed-to-lead automations',
-      'Human behavioural follow-up sequences',
-      'Dormant lead reactivation campaigns',
-      'Unlimited prospecting data sources',
-      'Data accuracy scrubbing',
-      'Lifetime technical support',
-      'Unlimited calls & texts',
-      'Minutes included monthly',
-    ],
-    cta: 'GET STARTED',
-    popular: false,
-  },
-  {
-    name: 'Scaling Team',
-    price: '$2,200',
-    period: '/ month',
-    startup: 'One-time setup fee • Based on team size',
-    tagline: 'Everything a growing real estate team needs to dominate their market with AI-powered outreach.',
-    features: [
-      'Everything in Scaling Agent',
-      'AI agents for every team member',
-      'Agent attraction campaign included',
-      'Revenue share opportunities',
-      'Market exclusivity — one per MLS',
-      'IDX website build & hosting',
-      'META ad campaign build & management',
-      'Ad spend included',
+      '1 AI outbound caller',
+      'Unlimited AI texting',
+      'Unlimited inbound call handling',
+      '2,000 minutes included',
+      '$0.29 / min after 2,000',
+      'Real estate cold calling scripts included',
+      'Lifetime tech support',
+      'Works with your CRM (KVCore, Follow Up Boss, LionDesk)',
     ],
     cta: 'GET STARTED',
     popular: true,
+  },
+  {
+    name: 'Scale Plan',
+    price: '$1,500',
+    period: '/ month',
+    startup: '$0 setup fee',
+    tagline: 'Best for teams, brokerages, or high-volume agents running full-capacity AI prospecting.',
+    features: [
+      'Unlimited AI outbound calling',
+      'Unlimited AI receptionist',
+      '2,000 minutes included',
+      '$0.29 / min after 2,000',
+      'Real estate scripts included',
+      'Dedicated tech support team',
+      'BONUS: Meta ads management included',
+      'BONUS: Transaction coordination included',
+    ],
+    cta: 'GET STARTED',
+    popular: false,
   },
 ];
 
@@ -64,10 +64,10 @@ export default function REPricing({ onGetStarted }: REPricingProps) {
       <div className="text-center">
         <span className="section-tag">Pricing</span>
         <h2 className="section-title">
-          Flexible Plans for <em>Every Agent</em>
+          Plans Built for <em>Real Estate Agents</em>
         </h2>
         <p className="section-sub" style={{ margin: '0 auto' }}>
-          No hidden fees. No long-term lock-ins. Just more listings and more closings.
+          One closed listing pays for 6–12 months. Everything after that is pure profit.
         </p>
       </div>
 
@@ -95,8 +95,8 @@ export default function REPricing({ onGetStarted }: REPricingProps) {
       </div>
 
       <p className="pricing-footnote">
-        Compare: a full-time ISA costs $40K–$70K/year &nbsp;·&nbsp; ZIONA AI Scaling Agent: under $6,000/year<br />
-        Cancel anytime with 30 days notice &nbsp;·&nbsp; Setup fee varies by plan
+        ROI Reality Check: Average listing commission $8,000–$12,000 &nbsp;·&nbsp; ZIONA AI cost $500–$1,500/month<br />
+        Close just ONE extra listing and you're profitable for the year &nbsp;·&nbsp; Cancel anytime with 30 days notice
       </p>
     </section>
   );

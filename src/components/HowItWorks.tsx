@@ -5,26 +5,26 @@ const steps: { n: string; icon: LucideIcon; title: string; desc: string }[] = [
   {
     n: '01',
     icon: PhoneOutgoing,
-    title: 'Outbound or Inbound Trigger',
-    desc: 'ZIONA AI either proactively calls your lead list at scale, or instantly picks up every incoming call to your business — 24 hours a day.',
+    title: 'AI Calls Your Database',
+    desc: 'The AI works through your lead list — making hundreds of calls while you\'re busy with clients. Your database finally gets worked, systematically and consistently.',
   },
   {
     n: '02',
     icon: Filter,
-    title: 'Smart Qualification',
-    desc: "The AI holds a natural two-way conversation, identifying each prospect's needs, budget, and timeline — so only high-intent leads advance.",
+    title: 'Qualifies Motivation and Timeline',
+    desc: "AI asks the right questions: What's your timeline? What are you looking for? Only motivated leads move forward. No more tire-kickers wasting your time.",
   },
   {
     n: '03',
     icon: RefreshCw,
-    title: 'Automated Follow-Up',
-    desc: 'Leads not yet ready are nurtured automatically with timely calls and personalised SMS until they\'re prepared to take the next step.',
+    title: 'Nurtures Until They\'re Ready',
+    desc: 'Not ready today? AI follows up automatically in 30 days, 60 days, or whenever you set. That lead who said "call me in 6 months"? AI actually does. Nothing falls through the cracks.',
   },
   {
     n: '04',
     icon: CalendarCheck,
-    title: 'Instant Scheduling',
-    desc: 'Qualified leads are booked straight into your calendar with instant SMS confirmation. You show up — the AI handles everything before it.',
+    title: 'Books the Appointment',
+    desc: 'When a prospect is qualified and ready, AI books directly into your calendar. Hot leads are transferred to you immediately with full context — so you\'re always prepared to close.',
   },
 ];
 
@@ -38,10 +38,10 @@ export default function HowItWorks() {
       <div className="text-center">
         <span className="section-tag">The Process</span>
         <h2 className="section-title">
-          From First Contact to <em>Booked Appointment</em>
+          From Lead to <em>Booked Appointment in 4 Steps</em>
         </h2>
         <p className="section-sub" style={{ margin: '0 auto' }}>
-          Whether a lead calls you or you call them — ZIONA AI handles every step automatically.
+          ZIONA AI works through your database automatically — from the first call to a confirmed meeting on your calendar.
         </p>
       </div>
 
@@ -59,7 +59,7 @@ export default function HowItWorks() {
 
       <div className="how-cta">
         <button className="btn-primary" onClick={() => scrollTo('contact')}>
-          SCHEDULE A CALL
+          START BOOKING THIS WEEK
         </button>
       </div>
     </section>

@@ -43,15 +43,14 @@ export default function REHero({ onCTA }: REHeroProps) {
   return (
     <section className="hero re-hero" id="re-home" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <div ref={parallaxRef} className="hero-content">
-        <div className="hero-pill">Real Estate AI — Inbound & Outbound</div>
+        <div className="hero-pill">Real Estate AI — Calls, Qualifies & Books Listings</div>
 
         <h1>
-          Your AI Agent That Fills<br />
-          <span>Your Calendar With Listings.</span>
+          AI that calls expired listings, <span> follows up FSBOs, and books</span> appointments. So you close <span> more deals.</span> 
         </h1>
 
         <p className="hero-sub">
-          ZIONA AI calls your leads, qualifies buyers and sellers, books listing appointments, and follows up automatically — so you can focus entirely on closing deals, not chasing contacts.
+          Your AI-powered sales team handles cold calling, lead qualification, and appointment setting for real estate agents, fully automated. Never let a lead go cold again.
         </p>
 
         <div className="hero-btns">
@@ -60,8 +59,8 @@ export default function REHero({ onCTA }: REHeroProps) {
         </div>
 
         <div className="hero-tags">
-          <span className="hero-tag">Seller Lead Outreach</span>
-          <span className="hero-tag">Buyer Lead Qualification</span>
+          <span className="hero-tag">Expired Listings</span>
+          <span className="hero-tag">FSBO Follow-Up</span>
           <span className="hero-tag">Listing Appointment Booking</span>
           <span className="hero-tag">AI SMS Follow-Up</span>
         </div>

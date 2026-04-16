@@ -4,28 +4,28 @@ import PulseIcon from './PulseIcon';
 const reasons: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: PhoneCall,
-    title: 'Always On — Inbound & Outbound',
-    desc: 'ZIONA AI answers every call coming in and makes every call going out — 24/7, with no breaks, no sick days, and no missed leads.',
+    title: 'Never Let a Hot Lead Go Cold',
+    desc: 'AI responds to every inquiry within 60 seconds. That lead who filled out your form at 9pm? Called by 9:01pm. No more slow follow-ups losing deals.',
   },
   {
     icon: Briefcase,
-    title: 'Works in Any Industry',
-    desc: 'From medical clinics to law firms, from real estate teams to home service companies — ZIONA AI adapts to your scripts, your tone, and your workflow.',
+    title: 'Stop Paying for Multiple Sales Reps',
+    desc: 'Get the output of 3–5 inside sales agents for a fraction of the cost. No hiring, no training, no managing — just results.',
   },
   {
     icon: ShieldCheck,
-    title: 'Zero Leads Left Behind',
-    desc: 'Every inbound enquiry is answered instantly. Every outbound lead is followed up relentlessly. No voicemail. No dropped opportunities.',
+    title: 'Your Database Actually Gets Called',
+    desc: "Those contacts sitting in your CRM? AI works through them systematically. Every lead, every past client, every cold contact — finally gets touched.",
   },
   {
     icon: TrendingUp,
-    title: 'Scale Without the Overhead',
-    desc: 'Replace the cost of multiple receptionists and sales reps with a single AI platform that does it all — for a fraction of the price.',
+    title: 'Perfect Follow-Up Every Time',
+    desc: 'AI never forgets to call back. That prospect who said "maybe in 90 days"? AI calls them in exactly 90 days. Zero leads fall through the cracks.',
   },
   {
     icon: MessageCircle,
-    title: 'Tailored Conversations, Every Time',
-    desc: "ZIONA AI speaks your brand's language — personalised scripts, industry-specific knowledge, and natural dialogue that feels human to every caller.",
+    title: 'Only Talk to Ready Prospects',
+    desc: 'AI qualifies motivation, timeline, and budget before they hit your calendar. Stop wasting time on tire-kickers — only speak to people ready to move.',
   },
 ];
 
@@ -35,10 +35,10 @@ export default function WhySection() {
       <div className="text-center">
         <span className="section-tag">The Advantages</span>
         <h2 className="section-title">
-          Why Businesses Across Every Industry <em>Choose ZIONA</em>
+          More Leads. Less Grinding. <em>More Closings.</em>
         </h2>
         <p className="section-sub" style={{ margin: '0 auto' }}>
-          Whether you're in real estate, healthcare, legal, or home services — the results are the same: more conversations, more bookings, less cost.
+          ZIONA AI works your database while you close deals — calling, qualifying, and following up automatically across every industry.
         </p>
       </div>
 
